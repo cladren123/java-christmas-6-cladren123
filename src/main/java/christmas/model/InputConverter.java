@@ -11,13 +11,12 @@ import java.util.Map;
  */
 public class InputConverter {
 
-  private final Validate validate = new Validate();
 
   // 날짜 입력값을 숫자로 변환
   public int convertDate(String input) {
-    validate.validateNumber(input);
+    Validate.validateNumber(input);
     int date = Integer.parseInt(input);
-    validate.validateDateNumberRange(date);
+    Validate.validateDateNumberRange(date);
     return date;
   }
 
@@ -27,10 +26,10 @@ public class InputConverter {
     String[] inputSplitRest = input.split(",");
     for (String data : inputSplitRest) {
       String[] dataSplitHyphen = data.split("-");
-      validate.validateMenuHaveNumber(dataSplitHyphen);
+      Validate.validateMenuHaveNumber(dataSplitHyphen);
       String menu = convertMenu(dataSplitHyphen[0]);
       int number = convertNumber(dataSplitHyphen[1]);
-      validate.validateMenuDuplicated(order, menu);
+      Validate.validateMenuDuplicated(order, menu);
       order.put(menu, number);
     }
     return order;
@@ -38,15 +37,15 @@ public class InputConverter {
 
   // 메뉴 검증 후 반환
   public String convertMenu(String inputMenu) {
-    validate.validateMenu(inputMenu);
+    Validate.validateMenu(inputMenu);
     return inputMenu;
   }
 
   // 메뉴 개수 검증 후 반환
   public int convertNumber(String inputNumber) {
-    validate.validateNumber(inputNumber);
+    Validate.validateNumber(inputNumber);
     int number = Integer.parseInt(inputNumber);
-    validate.validateMenuNumberRange(number);
+    Validate.validateMenuNumberRange(number);
     return number;
   }
 
