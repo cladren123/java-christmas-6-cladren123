@@ -27,7 +27,7 @@ public class EventPlanner {
         return validate.validateDate(input);
       }
       catch (IllegalArgumentException e) {
-        System.out.println(ErrorMessage.INVALID_DATE);
+        System.out.println(ErrorMessage.INVALID_DATE.getMessage());
       }
     }
   }
