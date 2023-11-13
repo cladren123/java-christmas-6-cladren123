@@ -39,6 +39,12 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 - [X]  validateMenuOnlyBeverage() : 음료만 있는지 확인
 - [X]  validateMenuMaximum() : 메뉴 갯수가 20 이내인지 검증
 
+### InputConverter
+
+입력값을 변환하는 작업을 수행합니다.
+
+- [X] convertDate() : 날짜 입력값을 숫자로 변환
+
 ### Event
 
 Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤트 배지 부여 여부를 계산합니다.
