@@ -43,14 +43,14 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤트 배지 부여 여부를 계산합니다.
 
 - [ ]  calculateOrderMoney() : 주문 금액을 계산
-- [ ]  discount() : 혜택 내역 집계
-- [ ]  ChristmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
+- [ ]  benefit() : 혜택 내역 집계
+- [ ]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
 - [ ]  weekdayDiscount() : 평일 할인 금액 계산
 - [ ]  weekendDiscount() : 주말 할인 금액 계산
 - [ ]  specialDiscount() : 특별 할인 금액
 - [ ]  giveawayEvent() : 증정 이벤트 계산
 - [ ]  badgeEvent() : 배지 부여
-- [ ]  MenuCount() : 입력 받은 주문에 메뉴 개수 계산
+- [ ]  menuCount() : 입력 받은 주문에 메뉴 개수 계산
 
 ### OutputView
 
@@ -59,10 +59,10 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [ ]  printMenu() : 주문한 메뉴와 개수 출력
 - [ ]  printOrderMoney() : 할인 전 총주문 금액 출력
 - [ ]  printGiveaway() : 증정 메뉴 출력
-- [ ]  printDiscount() : 혜택 내역 출력
-- [ ]  printDiscountMoney() : 총혜택 금액 출력
+- [ ]  printBenefit() : 혜택 내역 출력
+- [ ]  printBenefitMoney() : 총혜택 금액 출력
 - [ ]  printOrderMoneyAfterDiscount() : 할인 후 예상 결제 금액 출력
-- [ ]  printEventBedge() : 12월 이벤트 배지 출력
+- [ ]  printEventBadge() : 12월 이벤트 배지 출력
 - [ ]  printErrorMessage() : 상황에 맞는 에러 메세지 출력
 
 ### enum 클래스
@@ -71,4 +71,4 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [X]  OutputMessage : 출력 메세지 상수 모임
 - [ ]  DiscountMessage : 혜택 내역 매세지 상수 모임
 - [ ]  Menu : 메뉴 상수 모임
-- [ ]  EventBedge : 이벤트 뱃지 상수 모임
+- [ ]  EventBadge : 이벤트 뱃지 상수 모임
