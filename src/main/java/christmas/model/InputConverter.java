@@ -27,6 +27,7 @@ public class InputConverter {
     String[] inputSplitRest = input.split(",");
     for (String data : inputSplitRest) {
       String[] dataSplitHyphen = data.split("-");
+      validate.validateMenuHaveNumber(dataSplitHyphen);
       String menu = convertMenu(dataSplitHyphen[0]);
       int number = convertNumber(dataSplitHyphen[1]);
       validate.validateMenuDuplicated(order, menu);
