@@ -16,7 +16,10 @@ public class Order {
 
   public Order(int date, Map<String, Integer> inputOrder) {
     this.date = date;
-    this.order = convertOrder(inputOrder);
+    Map<Menu, Integer> order = convertOrder(inputOrder);
+    Validate.validateMenuOnlyBeverage(order);
+    Validate.validateMenuMaximum(order);
+    this.order = order;
   }
 
   public Map<Menu, Integer> convertOrder(Map<String, Integer> inputOrder) {
