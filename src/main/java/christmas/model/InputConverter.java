@@ -28,20 +28,25 @@ public class InputConverter {
     for (String data : inputSplitRest) {
       String[] dataSplitHyphen = data.split("-");
       String menu = convertMenu(dataSplitHyphen[0]);
-
-      validate.validateNumber(dataSplitHyphen[1]);
-      int number = Integer.parseInt(dataSplitHyphen[1]);
-      validate.validateMenuNumberRange(number);
-      validate.validateMenuDuplicated(order, dataSplitHyphen[0]);
-      order.put(dataSplitHyphen[0], number);
+      int number = convertNumber(dataSplitHyphen[1]);
+      validate.validateMenuDuplicated(order, menu);
+      order.put(menu, number);
     }
     return order;
   }
 
   // 메뉴 검증 후 반환
-  public String convertMenu(String menu) {
-    validate.validateMenu(menu);
-    return menu;
+  public String convertMenu(String inputMenu) {
+    validate.validateMenu(inputMenu);
+    return inputMenu;
+  }
+
+  // 메뉴 개수 검증 후 반환
+  public int convertNumber(String inputNumber) {
+    validate.validateNumber(inputNumber);
+    int number = Integer.parseInt(inputNumber);
+    validate.validateMenuNumberRange(number);
+    return number;
   }
 
 
