@@ -57,6 +57,13 @@ public class Validate {
     }
   }
 
+  // 메뉴의 개수가 없는 경우 검증
+  public void validateMenuHaveNumber(String[] data) {
+    if(data.length != 2) {
+      throw new IllegalArgumentException();
+    }
+  }
+
   // 음료만 있는지 확인
   public void validateMenuOnlyBeverage(Map<String, Integer> orderCategory) {
     if (orderCategory.size() == 1 && orderCategory.containsKey("beverage")) {
