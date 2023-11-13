@@ -43,7 +43,10 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 
 입력값을 변환하는 작업을 수행합니다.
 
-- [X] convertDate() : 날짜 입력값을 숫자로 변환
+- [X]  convertDate() : 날짜 입력값을 숫자로 변환
+- [X]  convertOrder() : 주문 입력값을 Map으로 변환 
+- [X]  convertMenu() : 주문의 메뉴 검증 후 변환
+- [X]  convertNumber() : 주문의 메뉴 개수 검증 후 반환
 
 ### Event
 
