@@ -21,8 +21,7 @@ public class EventPlanner {
   public void start() {
     System.out.println(InputMessage.WELCOME.getMessage());
     int date = readDate();
-
-
+    Map<String, Integer> order = readOrder();
   }
 
   // 날짜 입력
