@@ -39,7 +39,12 @@ public class Validate {
     throw new IllegalArgumentException();
   }
 
-
+  // 메뉴 개수가 1이상 20이하인지 확인
+  public void validateMenuNumberRange(int number) {
+    if(number < 1 || number > 20) {
+      throw new IllegalArgumentException();
+    }
+  }
 
 
 
