@@ -60,7 +60,16 @@ public class Validate {
     }
   }
 
-
+  // 메뉴 개수가 20개 이하인지 검증
+  public void validateMenuMaximum(Map<String, Integer> order) {
+    int count = 0;
+    for (String menu : order.keySet()) {
+      count += order.get(menu);
+    }
+    if(count > 20) {
+      throw new IllegalArgumentException();
+    }
+  }
 
 
 
