@@ -15,6 +15,13 @@ public class Validate {
     }
   }
 
+  // 날짜의 범위 검증
+  public void validateDateNumberRange(int date) {
+    if(date < 1 || date > 31) {
+      throw new IllegalArgumentException();
+    }
+  }
+
 
 
 
