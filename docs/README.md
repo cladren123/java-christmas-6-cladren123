@@ -36,6 +36,7 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 - [X]  validateMenu() : 메뉴가 있는지 검증
 - [X]  validateMenuNumberRange() : 1 이상 20 이하 숫자인지 검증
 - [X]  validateMenuDuplicated() : 메뉴가 중복인지 검증
+- [X]  validateMenuHaveNumber() : 메뉴의 개수가 입력되었는지 검증
 - [X]  validateMenuOnlyBeverage() : 음료만 있는지 확인
 - [X]  validateMenuMaximum() : 메뉴 갯수가 20 이내인지 검증
 
