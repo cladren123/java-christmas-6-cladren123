@@ -17,6 +17,7 @@
 Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 흐름을 설정합니다.
 
 - [ ]  start() : 프로그램을 시작
+- [X]  readDate() : 검증 과정을 거친 날짜 입력
 
 ### InputView
 
