@@ -1,4 +1,4 @@
-package christmas.constant;
+package christmas.constant.message;
 
 /**
  * 출력단에 사용하는 메세지 관리

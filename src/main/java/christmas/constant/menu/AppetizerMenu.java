@@ -1,4 +1,4 @@
-package christmas.constant;
+package christmas.constant.menu;
 
 public enum AppetizerMenu {
 
@@ -7,9 +7,9 @@ public enum AppetizerMenu {
   CAESAR_SALAD("시저샐러드", 8000);
 
   private String name;
-  private Integer price;
+  private int price;
 
-  AppetizerMenu(String name, Integer price) {
+  AppetizerMenu(String name, int price) {
     this.name = name;
     this.price = price;
   }
@@ -18,7 +18,7 @@ public enum AppetizerMenu {
     return name;
   }
 
-  public Integer getPrice() {
+  public int getPrice() {
     return price;
   }
 
