@@ -6,6 +6,8 @@ import christmas.model.InputConverter;
 import christmas.validator.Validate;
 import christmas.view.InputView;
 
+import java.util.Map;
+
 /**
  * 전체적인 흐름을 설정합니다.
  */
@@ -32,6 +34,19 @@ public class EventPlanner {
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_DATE.getMessage());
+      }
+    }
+  }
+
+  // 메뉴 입력
+  public Map<String, Integer> readOrder() {
+    while (true) {
+      String input = inputView.readMenu();
+      try {
+        return inputConverter.convertOrder(input);
+      }
+      catch (IllegalArgumentException e) {
+        System.out.println(ErrorMessage.INVALID_MENU.getMessage());
       }
     }
   }
