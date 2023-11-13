@@ -31,10 +31,10 @@ public class Validate {
   }
 
   // 메뉴가 있는지 검증
-  public static Menu validateMenu(String name) {
+  public static void validateMenu(String name) {
     for(Menu menu : Menu.values()) {
       if (menu.getName().equals(name)) {
-        return menu;
+        return;
       }
     }
     throw new IllegalArgumentException();
