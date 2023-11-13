@@ -46,6 +46,12 @@ public class Validate {
     }
   }
 
+  // 메뉴가 중복인지 검증
+  public void validateMenuDuplicated(Map<String, Integer> order, String menuName) {
+    if (order.containsKey(menuName)) {
+      throw new IllegalArgumentException();
+    }
+  }
 
 
 
