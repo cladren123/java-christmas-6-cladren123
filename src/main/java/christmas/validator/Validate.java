@@ -13,6 +13,13 @@ import java.util.Map;
  */
 public class Validate {
 
+  // 날짜 검증 : 숫자인지 검증, 1~31사이인지 검증
+  public int validateDate(String input) {
+    int date = validateNumber(input);
+    validateDateNumberRange(date);
+    return date;
+  }
+
   // 숫자인지 검증
   public int validateNumber(String input) {
     try {
