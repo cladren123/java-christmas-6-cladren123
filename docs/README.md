@@ -49,6 +49,10 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 - [X]  convertMenu() : 주문의 메뉴 검증 후 변환
 - [X]  convertNumber() : 주문의 메뉴 개수 검증 후 반환
 
+### Order
+
+날짜와 주문을 저장하며 각 종 작업을 수행합니다. 
+
 ### Event
 
 Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤트 배지 부여 여부를 계산합니다.

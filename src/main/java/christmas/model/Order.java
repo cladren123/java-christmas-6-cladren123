@@ -7,9 +7,11 @@ import java.util.Map;
  */
 public class Order {
 
+  private final int date;
   private final Map<String, Integer> order;
 
-  public Order(Map<String, Integer> order) {
+  public Order(int date, Map<String, Integer> order) {
+    this.date = date;
     this.order = order;
   }
 
