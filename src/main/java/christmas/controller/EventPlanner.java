@@ -3,8 +3,9 @@ package christmas.controller;
 import christmas.constant.message.ErrorMessage;
 import christmas.constant.message.InputMessage;
 import christmas.model.InputConverter;
-import christmas.validator.Validate;
+import christmas.model.Order;
 import christmas.view.InputView;
+import org.mockito.internal.matchers.Or;
 
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class EventPlanner {
   public void start() {
     System.out.println(InputMessage.WELCOME.getMessage());
     int date = readDate();
-    Map<String, Integer> order = readOrder();
+    readOrder(date);
   }
 
   // 날짜 입력
@@ -38,11 +39,12 @@ public class EventPlanner {
   }
 
   // 메뉴 입력
-  public Map<String, Integer> readOrder() {
+  public Order readOrder(int date) {
     while (true) {
       String input = inputView.readMenu();
       try {
-        return inputConverter.convertOrder(input);
+        Map<String, Integer> order = inputConverter.convertOrder(input);
+        return new Order(date, order);
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_MENU.getMessage());
