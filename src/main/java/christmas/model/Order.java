@@ -1,5 +1,9 @@
 package christmas.model;
 
+import christmas.constant.menu.Menu;
+import christmas.validator.Validate;
+
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -8,12 +12,26 @@ import java.util.Map;
 public class Order {
 
   private final int date;
-  private final Map<String, Integer> order;
+  private final Map<Menu, Integer> order;
 
-  public Order(int date, Map<String, Integer> order) {
+  public Order(int date, Map<String, Integer> inputOrder) {
     this.date = date;
-    this.order = order;
+    this.order = convertOrder(inputOrder);
   }
+
+  public Map<Menu, Integer> convertOrder(Map<String, Integer> inputOrder) {
+    Map<Menu, Integer> order = new HashMap<>();
+    for(String name : inputOrder.keySet()) {
+      Menu menu = Validate.validateMenu(name);
+      order.put(menu, inputOrder.get(name));
+    }
+    return order;
+  }
+
+
+
+
+
 
 
 
