@@ -13,17 +13,11 @@ import java.util.Map;
  */
 public class Validate {
 
-  // 날짜 검증 : 숫자인지 검증, 1~31사이인지 검증
-  public int validateDate(String input) {
-    int date = validateNumber(input);
-    validateDateNumberRange(date);
-    return date;
-  }
 
   // 숫자인지 검증
-  public int validateNumber(String input) {
+  public void validateNumber(String input) {
     try {
-      return Integer.parseInt(input);
+      Integer.parseInt(input);
     } catch (NumberFormatException e) {
       throw new IllegalArgumentException();
     }
@@ -35,6 +29,9 @@ public class Validate {
       throw new IllegalArgumentException();
     }
   }
+
+
+
 
   // 메뉴가 있는지 검증
   public Menu validateMenu(String name) {
