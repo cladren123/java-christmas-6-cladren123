@@ -53,6 +53,13 @@ public class Validate {
     }
   }
 
+  // 음료만 있는지 확인
+  public void validateMenuOnlyBeverage(Map<String, Integer> orderCategory) {
+    if (orderCategory.size() == 1 && orderCategory.containsKey("beverage")) {
+      throw new IllegalArgumentException();
+    }
+  }
+
 
 
 
