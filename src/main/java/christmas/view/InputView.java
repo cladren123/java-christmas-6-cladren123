@@ -17,7 +17,15 @@ public class InputView {
   // 날짜 입력
   public String readDate() {
     System.out.println(InputMessage.READ_DATE);
-    String InputDate = Console.readLine();
+    String inputDate = Console.readLine();
+    return inputDate;
+  }
+
+  // 메뉴 입력
+  public String readMenu() {
+    System.out.println(InputMessage.READ_MENU);
+    String inputMenu = Console.readLine();
+    return inputMenu;
   }
 
 }
