@@ -2,6 +2,7 @@ package christmas.controller;
 
 import christmas.constant.message.ErrorMessage;
 import christmas.constant.message.InputMessage;
+import christmas.model.InputConverter;
 import christmas.validator.Validate;
 import christmas.view.InputView;
 
@@ -11,7 +12,8 @@ import christmas.view.InputView;
 public class EventPlanner {
 
   private final InputView inputView = new InputView();
-  private final Validate validate = new Validate();
+  private final InputConverter inputConverter = new InputConverter();
+
 
 
   public void start() {
@@ -26,12 +28,15 @@ public class EventPlanner {
     while(true) {
       String input = inputView.readDate();
       try {
-        return validate.validateDate(input);
+        return inputConverter.convertDate(input);
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_DATE.getMessage());
       }
     }
   }
+
+
+
 
 }
