@@ -32,7 +32,6 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 
 - [X]  validateNumber() : 숫자인지 검증
 - [X]  validateDateNumberRange() : 1~31 사이인지 검증
-- [ ]  validateMenuForm() : 예시의 형태인지 검증
 - [X]  validateMenu() : 메뉴가 있는지 검증
 - [X]  validateMenuNumberRange() : 1 이상 20 이하 숫자인지 검증
 - [X]  validateMenuDuplicated() : 메뉴가 중복인지 검증
