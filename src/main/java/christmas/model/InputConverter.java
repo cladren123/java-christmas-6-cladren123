@@ -27,7 +27,8 @@ public class InputConverter {
     String[] inputSplitRest = input.split(",");
     for (String data : inputSplitRest) {
       String[] dataSplitHyphen = data.split("-");
-      validate.validateMenu(dataSplitHyphen[0]);
+      String menu = convertMenu(dataSplitHyphen[0]);
+
       validate.validateNumber(dataSplitHyphen[1]);
       int number = Integer.parseInt(dataSplitHyphen[1]);
       validate.validateMenuNumberRange(number);
@@ -37,6 +38,11 @@ public class InputConverter {
     return order;
   }
 
+  // 메뉴 검증 후 반환
+  public String convertMenu(String menu) {
+    validate.validateMenu(menu);
+    return menu;
+  }
 
 
 }
