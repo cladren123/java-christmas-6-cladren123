@@ -1,5 +1,7 @@
 package christmas.controller;
 
+import christmas.constant.message.ErrorMessage;
+import christmas.validator.Validate;
 import christmas.view.InputView;
 
 /**
@@ -7,24 +9,27 @@ import christmas.view.InputView;
  */
 public class EventPlanner {
 
-  private final InputView inputView;
+  private final InputView inputView = new InputView();
+  private final Validate validate = new Validate();
 
-  // 생성자 주입
-  EventPlanner(InputView inputView) {
-    this.inputView = inputView;
-  }
 
   public void start() {
+    int date = readDate();
 
 
   }
 
   // 날짜 입력
   public int readDate() {
-    // todo : 검증 클래스와 올바른 입력이 올 때까지 반복 구현
-    String inputDate = inputView.readDate();
-    int date = Integer.parseInt(inputDate);
-    return date;
+    while(true) {
+      String input = inputView.readDate();
+      try {
+        return validate.validateDate(input);
+      }
+      catch (IllegalArgumentException e) {
+        System.out.println(ErrorMessage.INVALID_DATE);
+      }
+    }
   }
 
 }
