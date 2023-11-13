@@ -23,8 +23,8 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 
 고객에게 날짜와 주문을 입력 받습니다.
 
-- [ ]  readDate() : 날짜 입력
-- [ ]  readMenu() : 메뉴 입력
+- [X]  readDate() : 날짜 입력
+- [X]  readMenu() : 메뉴 입력
 
 ### Validate
 
