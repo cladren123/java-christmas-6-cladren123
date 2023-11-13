@@ -11,7 +11,6 @@ import java.util.Map;
  */
 public class InputConverter {
 
-
   // 날짜 입력값을 숫자로 변환
   public int convertDate(String input) {
     Validate.validateNumber(input);
