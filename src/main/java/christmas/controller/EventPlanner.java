@@ -1,6 +1,7 @@
 package christmas.controller;
 
 import christmas.constant.message.ErrorMessage;
+import christmas.constant.message.InputMessage;
 import christmas.validator.Validate;
 import christmas.view.InputView;
 
@@ -14,6 +15,7 @@ public class EventPlanner {
 
 
   public void start() {
+    System.out.println(InputMessage.WELCOME.getMessage());
     int date = readDate();
 
 
