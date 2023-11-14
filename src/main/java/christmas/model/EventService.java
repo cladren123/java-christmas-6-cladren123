@@ -51,12 +51,12 @@ public class EventService {
 
   // 총 혜택 금액
   public int benefitMoney() {
-    return event.BenefitMoney();
+    return event.benefitMoney();
   }
 
   // 할인 후 예상 결제 금액
   public int orderMoneyAfterBenefit() {
-    return order.calculateOrderMoney() - event.BenefitMoney();
+    return order.calculateOrderMoney() - event.discountMoney();
   }
 
   // 12월 이벤트 뱃지
