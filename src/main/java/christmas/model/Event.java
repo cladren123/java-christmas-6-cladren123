@@ -1,10 +1,7 @@
 package christmas.model;
 
 import christmas.constant.badge.EventBadge;
-import christmas.constant.menu.Menu;
 import christmas.constant.message.BenefitMessage;
-import christmas.constant.number.Number;
-import christmas.constant.number.SpecialDay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,11 +9,11 @@ import java.util.Map;
 /**
  *
  */
-public class Event {
+public class Benefit {
 
   private final Map<BenefitMessage, Integer> benefit;
 
-  Event(Order order) {
+  public Benefit(Order order) {
     this.benefit = benefitTotal(order);
   }
 
