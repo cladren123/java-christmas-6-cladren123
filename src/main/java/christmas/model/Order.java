@@ -2,6 +2,7 @@ package christmas.model;
 
 import christmas.constant.menu.Menu;
 import christmas.constant.menu.MenuCategory;
+import christmas.constant.message.BenefitMessage;
 import christmas.constant.number.Number;
 import christmas.constant.number.SpecialDay;
 import christmas.validator.Validate;
@@ -77,14 +78,11 @@ public class Order {
   }
 
   // 날짜 할인, 평일 주말에 해당하는 할인 적용
-  public int dayDiscount() {
-    Map<String, Integer> discount = new HashMap<>();
-    if (checkWeekdayOrWeekend()) {
-      return discount.put("weekday", weekdayDiscount());
-    }
-    else {
-      return discount.put("weekend", weekendDiscount());
-    }
+  public Map<BenefitMessage, Integer> dayDiscount() {
+    Map<BenefitMessage, Integer> discount = new HashMap<>();
+    if (checkWeekdayOrWeekend()) discount.put(BenefitMessage.WEEKDAY_DISCOUNT, weekdayDiscount());
+    if (!checkWeekdayOrWeekend()) discount.put(BenefitMessage.WEEKEND_DISCOUNT, weekendDiscount());
+    return discount;
   }
 
   // 날짜 평일, 주말 확인
