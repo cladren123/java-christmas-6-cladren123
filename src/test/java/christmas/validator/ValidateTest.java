@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
@@ -68,8 +71,22 @@ class ValidateTest {
     assertThrows(IllegalArgumentException.class, () -> Validate.validateMenuNumberRange(input));
   }
 
+  @DisplayName("메뉴가 중복인지 검증 - 옳은 입력")
   @Test
-  void validateMenuDuplicated() {
+  void validateMenuDuplicated_validInput() {
+    Map<String, Integer> order = new LinkedHashMap<>();
+    order.put("양송이수프", 1);
+    String menuName = "해산물파스타";
+    assertDoesNotThrow(() -> Validate.validateMenuDuplicated(order, menuName));
+  }
+
+  @DisplayName("메뉴가 중복인지 검증 - 예외 입력")
+  @Test
+  void validateMenuDuplicated_invalidInput() {
+    Map<String, Integer> order = new LinkedHashMap<>();
+    order.put("양송이수프", 1);
+    String menuName = "양송이수프";
+    assertThrows(IllegalArgumentException.class, () -> Validate.validateMenuDuplicated(order, menuName));
   }
 
   @Test
