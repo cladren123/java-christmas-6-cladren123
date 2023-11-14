@@ -63,10 +63,9 @@ public class OutputView {
     System.out.println();
   }
 
-
-
-
-
-
-  
+  // 12월 이벤트 배지 출력
+  public void printEventBadge(String badge) {
+    System.out.println(OutputMessage.EVENT_BADGE.getMessage());
+    System.out.println(badge);
+  }
 }
