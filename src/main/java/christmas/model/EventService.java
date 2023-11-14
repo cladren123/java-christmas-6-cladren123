@@ -23,6 +23,11 @@ public class EventService {
     this.event = new Event(this.order);
   }
 
+  // 날짜
+  public int getDate() {
+    return order.getDate();
+  }
+
   // 주문 메뉴
   public Map<String, Integer> orderMenu() {
     return order.orderMenu();
