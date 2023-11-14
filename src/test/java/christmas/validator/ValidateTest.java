@@ -126,7 +126,23 @@ class ValidateTest {
     assertThrows(IllegalArgumentException.class, () -> Validate.validateMenuOnlyBeverage(order));
   }
 
+  @DisplayName("메뉴 개수가 20개 이하인지 검증 - 옳은 입력")
   @Test
-  void validateMenuMaximum() {
+  void validateMenuMaximum_validInput() {
+    Map<Menu, Integer> order = new LinkedHashMap<>();
+    order.put(Menu.BBQ_RIBS, 5);
+    order.put(Menu.RED_WINE, 1);
+    order.put(Menu.CHAMPAGNE, 1);
+    assertDoesNotThrow(() -> Validate.validateMenuMaximum(order));
+  }
+
+  @DisplayName("메뉴 개수가 20개 이하인지 검증 - 예외 입력")
+  @Test
+  void validateMenuMaximum_invalidInput() {
+    Map<Menu, Integer> order = new LinkedHashMap<>();
+    order.put(Menu.BBQ_RIBS, 15);
+    order.put(Menu.RED_WINE, 4);
+    order.put(Menu.CHAMPAGNE, 2);
+    assertThrows(IllegalArgumentException.class ,() -> Validate.validateMenuMaximum(order));
   }
 }
