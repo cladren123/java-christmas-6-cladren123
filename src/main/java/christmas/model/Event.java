@@ -10,11 +10,25 @@ import christmas.constant.number.SpecialDay;
 public class Event {
 
 
+  // 혜택 내역 집계
+  public void benefit() {
+
+  }
 
   // 크리스마스 디데이 할인 금액
   public int christmasDdayDiscount(int date) {
     if(date > Number.CHRISTMAS_D_DAY_LIMIT.getNumber()) return Number.NOTHING.getNumber();
     return Number.CHRISTMAS_D_DAY_START.getNumber() + Number.CHRISTMAS_D_DAY_DAY.getNumber() * (date-1);
+  }
+
+  // 날짜 평일, 주말 확인
+  // 평일 : true, 주말 : false
+  public boolean checkWeekdayOrWeekend(int date) {
+    int number = date % 7;
+    if(number == 1 || number == 2) {
+      return false;
+    }
+    return true;
   }
 
   // 평일 할인 금액 계산 - 디저트 할인
@@ -44,6 +58,8 @@ public class Event {
     }
     return Number.NOTHING.getNumber();
   }
+
+
 
 
 
