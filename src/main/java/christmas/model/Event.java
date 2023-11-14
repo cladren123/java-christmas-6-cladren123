@@ -20,6 +20,10 @@ public class Event {
     return Number.CHRISTMAS_D_DAY_START.getNumber() + Number.CHRISTMAS_D_DAY_DAY.getNumber() * (date-1);
   }
 
+  // 평일 할인 금액 계산 - 디저트 할인
+  public int weekdayDiscount(Order order) {
+    return order.countDessertMenu() * Number.WEEKDAY_DISCOUNT.getNumber();
+  }
 
 
 
