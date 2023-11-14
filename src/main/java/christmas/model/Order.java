@@ -76,6 +76,17 @@ public class Order {
     return Number.CHRISTMAS_D_DAY_START.getNumber() + Number.CHRISTMAS_D_DAY_DAY.getNumber() * (date-1);
   }
 
+  // 날짜 할인, 평일 주말에 해당하는 할인 적용
+  public int dayDiscount() {
+    Map<String, Integer> discount = new HashMap<>();
+    if (checkWeekdayOrWeekend()) {
+      return discount.put("weekday", weekdayDiscount());
+    }
+    else {
+      return discount.put("weekend", weekendDiscount());
+    }
+  }
+
   // 날짜 평일, 주말 확인
   // 평일 : true, 주말 : false
   public boolean checkWeekdayOrWeekend() {
