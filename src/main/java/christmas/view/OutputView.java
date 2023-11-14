@@ -45,6 +45,7 @@ public class OutputView {
     System.out.println(OutputMessage.BENEFIT.getMessage());
     if(benefit.size() == 0) {
       System.out.println(OutputMessage.NOTHING.getMessage());
+      System.out.println();
       return;
     }
     for (BenefitMessage benefitMessage : benefit.keySet()) {
@@ -56,7 +57,7 @@ public class OutputView {
   // 총혜택 금액 출력
   public void printBenefitMoney(int benefitMoney) {
     System.out.println(OutputMessage.BENEFIT_MONEY.getMessage());
-    System.out.println(String.format(OutputMessage.BENEFIT_MONEY_FORMAT.getMessage(), benefitMoney));
+    System.out.println(String.format(OutputMessage.BENEFIT_MONEY_FORMAT.getMessage(), benefitMoney * -1));
     System.out.println();
   }
 
