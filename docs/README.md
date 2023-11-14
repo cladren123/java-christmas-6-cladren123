@@ -94,5 +94,6 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [X]  ErrorMessage : 에러 메세지 상수 모임
 - [X]  Menu : 메뉴 상수 모임
 - [X]  Number : 숫자 상수 모임
+- [ ]  SpecialDay : 특별한 날짜 상수 모임
 - [X]  MenuCategory : 메뉴 카테고리 상수 모임
 - [X]  EventBadge : 이벤트 뱃지 상수 모임
