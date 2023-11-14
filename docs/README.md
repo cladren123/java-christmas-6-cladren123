@@ -65,8 +65,8 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 
 - [ ]  calculateOrderMoney() : 주문 금액을 계산
 - [ ]  benefit() : 혜택 내역 집계
-- [ ]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
-- [ ]  weekdayDiscount() : 평일 할인 금액 계산
+- [X]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
+- [X]  weekdayDiscount() : 평일 할인 금액 계산
 - [ ]  weekendDiscount() : 주말 할인 금액 계산
 - [ ]  specialDiscount() : 특별 할인 금액
 - [ ]  giveawayEvent() : 증정 이벤트 계산
