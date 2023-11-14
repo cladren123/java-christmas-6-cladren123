@@ -54,7 +54,12 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 날짜와 주문을 저장하며 각 종 작업을 수행합니다. 
 
 - [X]  convertOrder() : String을 Menu로 변환
+- [ ]  checkWeekdayOrWeekend() : 날짜가 평일인지 주말인지 확인 
+- [ ]  countDessertMenu() : 디저트 메뉴 개수 집계 
+- [ ]  countMainMenu() : 메인 메뉴 개수 집계
+- [ ]  calculateOrderMoney() : 총 주문 금액 계산
 
+ 
 ### Event
 
 Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤트 배지 부여 여부를 계산합니다.
