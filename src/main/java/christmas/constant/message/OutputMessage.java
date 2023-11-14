@@ -16,7 +16,7 @@ public enum OutputMessage {
   BENEFIT("<혜택 내역>"),
   BENEFIT_FORMAT("%s: -%,d원"),
   BENEFIT_MONEY("<총혜택 금액>"),
-  BENEFIT_MONEY_FORMAT("-%,d원"),
+  BENEFIT_MONEY_FORMAT("%,d원"),
   ORDER_MONEY_AFTER_DISCOUNT("<할인 후 예상 결제 금액>"),
   ORDER_MONEY_AFTER_DISCOUNT_FORMAT("%,d원"),
   EVENT_BADGE("<12월 이벤트 배지>");
