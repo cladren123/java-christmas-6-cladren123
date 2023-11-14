@@ -48,6 +48,11 @@ public class EventService {
     return result;
   }
 
+  // 총 혜택 금액
+  public int benefitMoney() {
+    return event.discountMoney();
+  }
+
 
 
 
