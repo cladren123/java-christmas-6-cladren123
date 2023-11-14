@@ -30,6 +30,7 @@ public class EventPlanner {
     print(eventService);
   }
 
+  // 결과 출력
   public void print(EventService eventService) {
     outputView.printIntro();
     outputView.printMenu(eventService.orderMenu());
