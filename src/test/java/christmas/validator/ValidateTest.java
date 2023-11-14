@@ -54,8 +54,18 @@ class ValidateTest {
     assertThrows(IllegalArgumentException.class, () -> Validate.validateMenu(input));
   }
 
-  @Test
-  void validateMenuNumberRange() {
+  @DisplayName("메뉴 개수가 1~20인지 확인 - 옳은 입력")
+  @ValueSource(ints = {1, 20, 10})
+  @ParameterizedTest
+  void validateMenuNumberRange_validInput(int input) {
+    assertDoesNotThrow(() -> Validate.validateMenuNumberRange(input));
+  }
+
+  @DisplayName("메뉴 개수가 1~20인지 확인 - 예외 입력")
+  @ValueSource(ints = {0, 21})
+  @ParameterizedTest
+  void validateMenuNumberRange_invalidInput(int input) {
+    assertThrows(IllegalArgumentException.class, () -> Validate.validateMenuNumberRange(input));
   }
 
   @Test
