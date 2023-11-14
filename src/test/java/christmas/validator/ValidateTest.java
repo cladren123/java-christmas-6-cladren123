@@ -33,7 +33,7 @@ class ValidateTest {
   }
 
   @DisplayName("입력값이 1~31인지 검증 - 예외 입력")
-  @ValueSource(ints = {0, 32, 999})
+  @ValueSource(ints = {-1, 0, 32, 999})
   @ParameterizedTest
   void validateDateNumberRange_invalidNumber(int input) {
     assertThrows(IllegalArgumentException.class, () -> Validate.validateDateNumberRange(input));
