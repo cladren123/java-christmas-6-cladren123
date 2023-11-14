@@ -58,9 +58,10 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 - [X]  countMainMenu() : 메인 메뉴 개수 집계
 - [X]  calculateOrderMoney() : 총 주문 금액 계산
 - [X]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
+- [X]  dayDiscount() : 날짜 할인 금액 계산
 - [X]  weekdayDiscount() : 평일 할인 금액 계산
 - [X]  weekendDiscount() : 주말 할인 금액 계산
-- [X]  specialDiscount() : 특별 할인 금액
+- [X]  specialDiscount() : 특별 할인 금액 계산
 - [X]  giveawayEvent() : 증정 이벤트 계산
 
  
