@@ -89,9 +89,23 @@ class ValidateTest {
     assertThrows(IllegalArgumentException.class, () -> Validate.validateMenuDuplicated(order, menuName));
   }
 
+  @DisplayName("메뉴의 개수가 없는 경우 검증 - 옳은 입력")
   @Test
-  void validateMenuHaveNumber() {
+  void validateMenuHaveNumber_validInput() {
+    String[] data = new String[2];
+    data[0] = "양송이 수프";
+    data[1] = "1";
+    assertDoesNotThrow(() -> Validate.validateMenuHaveNumber(data));
   }
+
+  @DisplayName("메뉴의 개수가 없는 경우 검증 - 예외 입력")
+  @Test
+  void validateMenuHaveNumber_invalidInput() {
+    String[] data = new String[1];
+    data[0] = "양송이 수프";
+    assertThrows(IllegalArgumentException.class, () -> Validate.validateMenuHaveNumber(data));
+  }
+
 
   @Test
   void validateMenuOnlyBeverage() {
