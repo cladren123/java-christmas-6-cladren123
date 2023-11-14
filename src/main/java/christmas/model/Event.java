@@ -17,10 +17,6 @@ public class Event {
     this.benefit = benefitTotal(order);
   }
 
-  public Map<BenefitMessage, Integer> getBenefit() {
-    return benefit;
-  }
-
   // 혜택 집계
   public Map<BenefitMessage, Integer> benefitTotal(Order order) {
     Map<BenefitMessage, Integer> benefit = new HashMap<>();
