@@ -1,5 +1,6 @@
 package christmas.validator;
 
+import christmas.constant.menu.Menu;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -107,8 +108,22 @@ class ValidateTest {
   }
 
 
+  @DisplayName("음료만 있는지 검증 - 옳은 입력")
   @Test
-  void validateMenuOnlyBeverage() {
+  void validateMenuOnlyBeverage_validInput() {
+    Map<Menu, Integer> order = new LinkedHashMap<>();
+    order.put(Menu.CHOCOLATE_CAKE, 1);
+    order.put(Menu.RED_WINE, 1);
+    assertDoesNotThrow(() -> Validate.validateMenuOnlyBeverage(order));
+  }
+
+  @DisplayName("음료만 있는지 검증 - 예외 입력")
+  @Test
+  void validateMenuOnlyBeverage_invalidInput() {
+    Map<Menu, Integer> order = new LinkedHashMap<>();
+    order.put(Menu.RED_WINE, 1);
+    order.put(Menu.CHAMPAGNE, 1);
+    assertThrows(IllegalArgumentException.class, () -> Validate.validateMenuOnlyBeverage(order));
   }
 
   @Test
