@@ -7,6 +7,7 @@ import christmas.model.EventService;
 import christmas.model.InputConverter;
 import christmas.model.Order;
 import christmas.view.InputView;
+import christmas.view.OutputView;
 import org.mockito.internal.matchers.Or;
 
 import java.util.Map;
@@ -18,14 +19,26 @@ public class EventPlanner {
 
   private final InputView inputView = new InputView();
   private final InputConverter inputConverter = new InputConverter();
+  private final OutputView outputView = new OutputView();
 
 
 
   // 흐름 제어
   public void start() {
     inputView.welcome();
-    int date = readDate();
     EventService eventService = new EventService(readDate(), readOrder());
+    print(eventService);
+  }
+
+  public void print(EventService eventService) {
+    outputView.printIntro();
+    outputView.printMenu(eventService.orderMenu());
+    outputView.printOrderMoney(eventService.orderMoney());
+    outputView.printGiveaway(eventService.giveaway());
+    outputView.printBenefit(eventService.benefit());
+    outputView.printBenefitMoney(eventService.benefitMoney());
+    outputView.printOrderMoneyAfterDiscount(eventService.orderMoneyAfterBenefit());
+    outputView.printEventBadge(eventService.badgeEvent());
   }
 
 
