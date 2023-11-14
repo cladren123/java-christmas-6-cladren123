@@ -63,7 +63,6 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 
 Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤트 배지 부여 여부를 계산합니다.
 
-- [ ]  calculateOrderMoney() : 주문 금액을 계산
 - [ ]  benefit() : 혜택 내역 집계
 - [X]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
 - [X]  weekdayDiscount() : 평일 할인 금액 계산
