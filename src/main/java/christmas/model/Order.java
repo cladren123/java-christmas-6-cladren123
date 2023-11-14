@@ -34,13 +34,23 @@ public class Order {
     return order;
   }
 
-
-
   // 디저트 메뉴 개수 집계
   public int countDessertMenu() {
     int count = 0;
     for(Menu menu : order.keySet()) {
       if(menu.getCategory().equals(MenuCategory.DESSERT)) {
+        count += 1;
+      }
+    }
+    return count;
+  }
+
+
+  // 메인 메뉴 개수 집계
+  public int countMainMenu() {
+    int count = 0;
+    for(Menu menu : order.keySet()) {
+      if(menu.getCategory().equals(MenuCategory.MAIN_COURSE)) {
         count += 1;
       }
     }
