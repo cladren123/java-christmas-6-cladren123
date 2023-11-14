@@ -8,6 +8,7 @@ public enum OutputMessage {
   INTRO("에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n"),
   NOTHING("없음\n"),
   ORDER_MENU("<주문 메뉴>\n"),
+  ORDER_MENU_FORMAT("%s %d개"),
   ORDER_MONEY("<할인 전 총주문 금액>\n"),
   GIVEAWAY_MENU("<증정 메뉴>\n"),
   GIVEAWAY_MENU_TRUE("샴페인 1개\n"),
