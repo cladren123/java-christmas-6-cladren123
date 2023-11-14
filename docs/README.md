@@ -81,7 +81,7 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [X] giveaway() : 증정 메뉴 
 - [X] benefit() : 혜택 내역 
 - [X] benefitMoney() : 총혜택 금액
-- [] orderMoneyAfterBenefit() : 할인 후 예상 결제 금액
+- [X] orderMoneyAfterBenefit() : 할인 후 예상 결제 금액
 - [] badgeEvent() : 12월 이벤트 배지
 
 ### OutputView
