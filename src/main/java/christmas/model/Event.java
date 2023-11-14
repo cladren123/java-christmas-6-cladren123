@@ -9,12 +9,16 @@ import java.util.Map;
 /**
  *
  */
-public class Benefit {
+public class Event {
 
   private final Map<BenefitMessage, Integer> benefit;
 
-  public Benefit(Order order) {
+  public Event(Order order) {
     this.benefit = benefitTotal(order);
+  }
+
+  public Map<BenefitMessage, Integer> getBenefit() {
+    return benefit;
   }
 
   // 혜택 집계
