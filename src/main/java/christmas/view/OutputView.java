@@ -56,6 +56,13 @@ public class OutputView {
     System.out.println();
   }
 
+  // 할인 후 예상 결제 금액 출력
+  public void printOrderMoneyAfterDiscount(int orderMoneyAfterBenefit) {
+    System.out.println(OutputMessage.ORDER_MONEY_AFTER_DISCOUNT.getMessage());
+    System.out.println(String.format(OutputMessage.ORDER_MONEY_AFTER_DISCOUNT_FORMAT.getMessage(), orderMoneyAfterBenefit));
+    System.out.println();
+  }
+
 
 
 
