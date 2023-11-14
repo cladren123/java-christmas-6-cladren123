@@ -77,8 +77,8 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 
 출력에 쓰일 비즈니스 로직을 처리합니다. 
 
-- [] orderMoney() : 할인 전 총 주문 금액
-- [] giveaway() : 증정 메뉴 
+- [X] orderMoney() : 할인 전 총 주문 금액
+- [X] giveaway() : 증정 메뉴 
 - [] benefit() : 혜택 내역 
 - [] benefitMoney() : 총혜택 금액
 - [] orderMoneyAfterBenefit() : 할인 후 예상 결제 금액
