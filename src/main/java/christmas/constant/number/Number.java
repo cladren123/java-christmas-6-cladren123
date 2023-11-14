@@ -1,6 +1,6 @@
-package christmas.constant.money;
+package christmas.constant.number;
 
-public enum Money {
+public enum Number {
 
   CHRISTMAS_D_DAY_LIMIT(25),
   CHRISTMAS_D_DAY_START(1000),
@@ -10,13 +10,13 @@ public enum Money {
   SPECIAL_DISCOUNT(1000);
 
 
-  private final int price;
+  private final int number;
 
-  Money(int price) {
-    this.price = price;
+  Number(int number) {
+    this.number = number;
   }
 
-  public int getPrice() {
-    return price;
+  public int getNumber() {
+    return number;
   }
 }
