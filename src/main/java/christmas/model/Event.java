@@ -4,6 +4,7 @@ import christmas.constant.badge.EventBadge;
 import christmas.constant.message.BenefitMessage;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -19,7 +20,7 @@ public class Event {
 
   // 혜택 집계
   public Map<BenefitMessage, Integer> benefitTotal(Order order) {
-    Map<BenefitMessage, Integer> benefit = new HashMap<>();
+    Map<BenefitMessage, Integer> benefit = new LinkedHashMap<>();
     benefit.put(BenefitMessage.CHRISTMAS_D_DAY,order.christmasDdayDiscount());
     benefit.putAll(order.dayDiscount());
     benefit.put(BenefitMessage.SPECIAL_DISCOUNT, order.specialDiscount());
@@ -30,7 +31,7 @@ public class Event {
   // 유효한 혜택
   // 혜택 내용 : 0 제외
   public Map<BenefitMessage, Integer> benefit() {
-    Map<BenefitMessage, Integer> result = new HashMap<>();
+    Map<BenefitMessage, Integer> result = new LinkedHashMap<>();
     for (BenefitMessage benefitMessage : benefit.keySet()) {
       if(benefit.get(benefitMessage) > 0) {
         result.put(benefitMessage, benefit.get(benefitMessage));

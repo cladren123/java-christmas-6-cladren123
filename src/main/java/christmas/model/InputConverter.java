@@ -4,6 +4,7 @@ package christmas.model;
 import christmas.validator.Validate;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -21,7 +22,7 @@ public class InputConverter {
 
   // 메뉴 입력값을 Map<이름, 갯수> 로 변환
   public Map<String, Integer> convertOrder(String input) {
-    Map<String, Integer> order = new HashMap<>();
+    Map<String, Integer> order = new LinkedHashMap<>();
     String[] inputSplitRest = input.split(",");
     for (String data : inputSplitRest) {
       String[] dataSplitHyphen = data.split("-");

@@ -8,6 +8,7 @@ import christmas.constant.number.SpecialDay;
 import christmas.validator.Validate;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -33,7 +34,7 @@ public class Order {
 
   // String에서 Menu 변환
   public Map<Menu, Integer> convertOrder(Map<String, Integer> inputOrder) {
-    Map<Menu, Integer> order = new HashMap<>();
+    Map<Menu, Integer> order = new LinkedHashMap<>();
     for(String name : inputOrder.keySet()) {
       Menu menu = Validate.validateMenu(name);
       order.put(menu, inputOrder.get(name));
@@ -43,7 +44,7 @@ public class Order {
 
   // 메뉴 목록 반환
   public Map<String, Integer> orderMenu() {
-    Map<String, Integer> result = new HashMap<>();
+    Map<String, Integer> result = new LinkedHashMap<>();
     for(Menu menu : order.keySet()) {
       result.put(menu.getName(), order.get(menu));
     }
@@ -92,7 +93,7 @@ public class Order {
 
   // 날짜 할인, 평일 주말에 해당하는 할인 적용
   public Map<BenefitMessage, Integer> dayDiscount() {
-    Map<BenefitMessage, Integer> discount = new HashMap<>();
+    Map<BenefitMessage, Integer> discount = new LinkedHashMap<>();
     if (checkWeekdayOrWeekend()) discount.put(BenefitMessage.WEEKDAY_DISCOUNT, weekdayDiscount());
     if (!checkWeekdayOrWeekend()) discount.put(BenefitMessage.WEEKEND_DISCOUNT, weekendDiscount());
     return discount;
