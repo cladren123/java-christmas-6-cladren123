@@ -98,8 +98,8 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [X]  printBenefit() : 혜택 내역 출력
 - [X]  printBenefitMoney() : 총혜택 금액 출력
 - [X]  printOrderMoneyAfterDiscount() : 할인 후 예상 결제 금액 출력
-- [ ]  printEventBadge() : 12월 이벤트 배지 출력
-- [ ]  printErrorMessage() : 상황에 맞는 에러 메세지 출력
+- [X]  printEventBadge() : 12월 이벤트 배지 출력
+
 
 ### enum 클래스
 
