@@ -5,7 +5,7 @@ package christmas.constant.message;
  */
 public enum OutputMessage {
 
-  INTRO("에 우테코 식당에서 받을 이벤트 혜택 미리 보기!"),
+  INTRO("12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!"),
   NOTHING("없음"),
   ORDER_MENU("<주문 메뉴>"),
   ORDER_MENU_FORMAT("%s %d개"),
