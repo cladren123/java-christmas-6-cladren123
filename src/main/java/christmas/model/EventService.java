@@ -58,6 +58,11 @@ public class EventService {
     return order.calculateOrderMoney() - event.discountMoney();
   }
 
+  // 12월 이벤트 뱃지
+  public String badgeEvent() {
+    return event.badgeEvent();
+  }
+
 
 
 
