@@ -1,5 +1,6 @@
 package christmas.model;
 
+import christmas.constant.badge.EventBadge;
 import christmas.constant.menu.Menu;
 import christmas.constant.message.BenefitMessage;
 import christmas.constant.number.Number;
@@ -36,6 +37,14 @@ public class Event {
       discountMoney += benefit.get(benefitMessage);
     }
     return discountMoney;
+  }
+
+  // 배지 부여
+  public String badgeEvent() {
+    if (discountMoney() > EventBadge.SANTA.getPrice()) return EventBadge.SANTA.getName();
+    if (discountMoney() > EventBadge.TREE.getPrice()) return EventBadge.TREE.getName();
+    if (discountMoney() > EventBadge.STAR.getPrice()) return EventBadge.STAR.getName();
+    return EventBadge.NOTHING.getName();
   }
 
 
