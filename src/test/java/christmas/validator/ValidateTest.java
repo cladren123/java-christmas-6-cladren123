@@ -17,17 +17,26 @@ class ValidateTest {
     assertDoesNotThrow(() -> Validate.validateNumber(input));
   }
 
-  @DisplayName("입력값이 숫자인지 검증 - 예외 결과")
+  @DisplayName("입력값이 숫자인지 검증 - 예외 입력")
   @ValueSource(strings = {"a", "10c", "c111"})
   @ParameterizedTest
-  void validateNumber_unvalidNumber(String input) {
+  void validateNumber_invalidNumber(String input) {
     assertThrows(IllegalArgumentException.class, () -> Validate.validateNumber(input));
   }
 
 
+  @DisplayName("입력값이 1~31인지 검증 - 옳은 입력")
+  @ValueSource(ints = {1, 11, 31})
+  @ParameterizedTest
+  void validateDateNumberRange_validNumber(int input) {
+    assertDoesNotThrow(() -> Validate.validateDateNumberRange(input));
+  }
 
-  @Test
-  void validateDateNumberRange() {
+  @DisplayName("입력값이 1~31인지 검증 - 예외 입력")
+  @ValueSource(ints = {0, 32, 999})
+  @ParameterizedTest
+  void validateDateNumberRange_invalidNumber(int input) {
+    assertThrows(IllegalArgumentException.class, () -> Validate.validateDateNumberRange(input));
   }
 
   @Test
