@@ -57,6 +57,11 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 - [X]  countDessertMenu() : 디저트 메뉴 개수 집계 
 - [X]  countMainMenu() : 메인 메뉴 개수 집계
 - [X]  calculateOrderMoney() : 총 주문 금액 계산
+- [X]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
+- [X]  weekdayDiscount() : 평일 할인 금액 계산
+- [X]  weekendDiscount() : 주말 할인 금액 계산
+- [X]  specialDiscount() : 특별 할인 금액
+- [X]  giveawayEvent() : 증정 이벤트 계산
 
  
 ### Event
@@ -64,11 +69,6 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤트 배지 부여 여부를 계산합니다.
 
 - [ ]  benefit() : 혜택 내역 집계
-- [X]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
-- [X]  weekdayDiscount() : 평일 할인 금액 계산
-- [X]  weekendDiscount() : 주말 할인 금액 계산
-- [X]  specialDiscount() : 특별 할인 금액
-- [X]  giveawayEvent() : 증정 이벤트 계산
 - [ ]  badgeEvent() : 배지 부여
 - [ ]  menuCount() : 입력 받은 주문에 메뉴 개수 계산
 
