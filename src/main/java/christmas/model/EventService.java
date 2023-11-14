@@ -53,6 +53,11 @@ public class EventService {
     return event.discountMoney();
   }
 
+  // 할인 후 예상 결제 금액
+  public int orderMoneyAfterBenefit() {
+    return order.calculateOrderMoney() - event.discountMoney();
+  }
+
 
 
 
