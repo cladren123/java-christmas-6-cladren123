@@ -94,7 +94,7 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [X]  printIntro() : 인트로 문구 출력
 - [X]  printMenu() : 주문한 메뉴와 개수 출력
 - [X]  printOrderMoney() : 할인 전 총주문 금액 출력
-- [ ]  printGiveaway() : 증정 메뉴 출력
+- [X]  printGiveaway() : 증정 메뉴 출력
 - [ ]  printBenefit() : 혜택 내역 출력
 - [ ]  printBenefitMoney() : 총혜택 금액 출력
 - [ ]  printOrderMoneyAfterDiscount() : 할인 후 예상 결제 금액 출력
