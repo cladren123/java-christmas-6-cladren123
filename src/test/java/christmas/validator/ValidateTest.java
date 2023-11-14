@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 class ValidateTest {
 
@@ -39,8 +40,18 @@ class ValidateTest {
     assertThrows(IllegalArgumentException.class, () -> Validate.validateDateNumberRange(input));
   }
 
-  @Test
-  void validateMenu() {
+  @DisplayName("메뉴가 있는지 검증 - 옳은 입력")
+  @ValueSource(strings = {"양송이수프", "해산물파스타", "아이스크림", "레드와인"})
+  @ParameterizedTest
+  void validateMenu_validInput(String input) {
+    assertDoesNotThrow(() -> Validate.validateMenu(input));
+  }
+
+  @DisplayName("메뉴가 있는지 검증 - 예외 입력")
+  @ValueSource(strings = {"양송이수푸", "vv10", "adff!!", "레두와인"})
+  @ParameterizedTest
+  void validateMenu_invalidInput(String input) {
+    assertThrows(IllegalArgumentException.class, () -> Validate.validateMenu(input));
   }
 
   @Test
