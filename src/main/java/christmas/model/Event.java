@@ -7,11 +7,6 @@ import christmas.constant.number.Number;
  */
 public class Event {
 
-  private final Order order;
-
-  public Event(Order order) {
-    this.order = order;
-  }
 
 
   // 크리스마스 디데이 할인 금액
@@ -23,6 +18,11 @@ public class Event {
   // 평일 할인 금액 계산 - 디저트 할인
   public int weekdayDiscount(Order order) {
     return order.countDessertMenu() * Number.WEEKDAY_DISCOUNT.getNumber();
+  }
+
+  // 주말 할인 금액 계산 - 메인 메뉴 할인
+  public int weekendDiscount(Order order) {
+    return order.countMainMenu() * Number.WEEKEND_DISCOUNT.getNumber();
   }
 
 
