@@ -19,10 +19,6 @@ public class Order {
   private final int date;
   private final Map<Menu, Integer> order;
 
-  public int getDate() {
-    return date;
-  }
-
   // 생성자
   public Order(int date, Map<String, Integer> inputOrder) {
     this.date = date;
@@ -40,6 +36,11 @@ public class Order {
       order.put(menu, inputOrder.get(name));
     }
     return order;
+  }
+
+  // 날짜 반환
+  public int getDate() {
+    return date;
   }
 
   // 메뉴 목록 반환
