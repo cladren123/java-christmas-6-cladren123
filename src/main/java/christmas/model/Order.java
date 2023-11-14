@@ -57,6 +57,15 @@ public class Order {
     return count;
   }
 
+  // 총 주문 금액 계산
+  public int calculateOrderMoney() {
+    int money = 0;
+    for(Menu menu : order.keySet()) {
+      money += menu.getPrice() * order.get(menu);
+    }
+    return money;
+  }
+
 
 
 
