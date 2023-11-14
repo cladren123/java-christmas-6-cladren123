@@ -42,9 +42,10 @@ public class Event {
 
   // 배지 부여
   public String badgeEvent() {
-    if (discountMoney() > EventBadge.SANTA.getPrice()) return EventBadge.SANTA.getName();
-    if (discountMoney() > EventBadge.TREE.getPrice()) return EventBadge.TREE.getName();
-    if (discountMoney() > EventBadge.STAR.getPrice()) return EventBadge.STAR.getName();
+    int discountMoney = discountMoney();
+    if (discountMoney > EventBadge.SANTA.getPrice()) return EventBadge.SANTA.getName();
+    if (discountMoney > EventBadge.TREE.getPrice()) return EventBadge.TREE.getName();
+    if (discountMoney > EventBadge.STAR.getPrice()) return EventBadge.STAR.getName();
     return EventBadge.NOTHING.getName();
   }
 
