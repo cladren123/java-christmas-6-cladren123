@@ -73,7 +73,8 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 
 - [X]  benefitTotal() : 혜택 내역 집계
 - [X]  benefit() : 유효한 혜택 내역 집계
-- [X]  benefitMoney() : 총 혜택 금액 계산 
+- [X]  benefitMoney() : 총 혜택 금액 계산
+- [X]  discountMoney() : 총 할인 금액 계산
 - [X]  badgeEvent() : 배지 부여
 
 ### EventService
