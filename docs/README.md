@@ -69,7 +69,7 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [X]  weekdayDiscount() : 평일 할인 금액 계산
 - [X]  weekendDiscount() : 주말 할인 금액 계산
 - [X]  specialDiscount() : 특별 할인 금액
-- [ ]  giveawayEvent() : 증정 이벤트 계산
+- [X]  giveawayEvent() : 증정 이벤트 계산
 - [ ]  badgeEvent() : 배지 부여
 - [ ]  menuCount() : 입력 받은 주문에 메뉴 개수 계산
 
