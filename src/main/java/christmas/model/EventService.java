@@ -23,6 +23,10 @@ public class EventService {
     this.event = new Event(this.order);
   }
 
+  // 주문 메뉴
+  public Map<String, Integer> orderMenu() {
+    return order.orderMenu();
+  }
 
 
   // 할인 전 총 주문 금액
