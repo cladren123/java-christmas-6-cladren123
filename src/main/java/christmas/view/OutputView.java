@@ -49,6 +49,13 @@ public class OutputView {
     System.out.println();
   }
 
+  // 총혜택 금액 출력
+  public void printBenefitMoney(int benefitMoney) {
+    System.out.println(OutputMessage.BENEFIT_MONEY.getMessage());
+    System.out.println(String.format(OutputMessage.BENEFIT_MONEY_FORMAT.getMessage(), benefitMoney));
+    System.out.println();
+  }
+
 
 
 
