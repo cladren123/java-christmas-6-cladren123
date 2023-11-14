@@ -32,7 +32,7 @@ public class EventPlanner {
 
   // 결과 출력
   public void print(EventService eventService) {
-    outputView.printIntro();
+    outputView.printIntro(eventService.getDate());
     outputView.printMenu(eventService.orderMenu());
     outputView.printOrderMoney(eventService.orderMoney());
     outputView.printGiveaway(eventService.giveaway());
