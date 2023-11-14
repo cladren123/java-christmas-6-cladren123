@@ -32,6 +32,15 @@ public class OutputView {
     System.out.println();
   }
 
+  // 증정 메뉴 출력
+  public void printGiveaway(String message) {
+    System.out.println(OutputMessage.GIVEAWAY_MENU.getMessage());
+    System.out.println(message);
+    System.out.println();
+  }
+
+
+
 
 
 
