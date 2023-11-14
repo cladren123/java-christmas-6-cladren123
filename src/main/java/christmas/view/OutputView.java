@@ -43,6 +43,10 @@ public class OutputView {
   // 혜택 내역 출력
   public void printBenefit(Map<BenefitMessage, Integer> benefit) {
     System.out.println(OutputMessage.BENEFIT.getMessage());
+    if(benefit.size() == 0) {
+      System.out.println(OutputMessage.NOTHING.getMessage());
+      return;
+    }
     for (BenefitMessage benefitMessage : benefit.keySet()) {
       System.out.println(String.format(OutputMessage.BENEFIT_FORMAT.getMessage(), benefitMessage.getMessage(), benefit.get(benefitMessage)));
     }
