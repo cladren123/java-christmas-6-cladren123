@@ -55,7 +55,7 @@ public class Order {
     int count = 0;
     for(Menu menu : order.keySet()) {
       if(menu.getCategory().equals(MenuCategory.DESSERT)) {
-        count += 1;
+        count += order.get(menu);
       }
     }
     return count;
