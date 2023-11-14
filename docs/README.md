@@ -93,5 +93,6 @@ Model 역할 수행, 날짜와 메뉴를 입력 받아 할인과 증정, 이벤�
 - [X]  BenefitMessage : 혜택 내역 매세지 상수 모임
 - [X]  ErrorMessage : 에러 메세지 상수 모임
 - [X]  Menu : 메뉴 상수 모임
+- [X]  Money : 돈 상수 모임
 - [X]  MenuCategory : 메뉴 카테고리 상수 모임
 - [X]  EventBadge : 이벤트 뱃지 상수 모임
