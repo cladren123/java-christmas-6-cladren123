@@ -1,6 +1,7 @@
 package christmas.view;
 
 
+import christmas.constant.message.BenefitMessage;
 import christmas.constant.message.OutputMessage;
 
 import java.util.Map;
@@ -36,6 +37,15 @@ public class OutputView {
   public void printGiveaway(String message) {
     System.out.println(OutputMessage.GIVEAWAY_MENU.getMessage());
     System.out.println(message);
+    System.out.println();
+  }
+
+  // 혜택 내역 출력
+  public void printBenefit(Map<BenefitMessage, Integer> benefit) {
+    System.out.println(OutputMessage.BENEFIT.getMessage());
+    for (BenefitMessage benefitMessage : benefit.keySet()) {
+      System.out.println(String.format(OutputMessage.BENEFIT_FORMAT.getMessage(), benefitMessage.getMessage(), benefit.get(benefitMessage)));
+    }
     System.out.println();
   }
 
