@@ -37,6 +37,15 @@ public class Order {
     return order;
   }
 
+  // 메뉴 목록 반환
+  public Map<String, Integer> orderMenu() {
+    Map<String, Integer> result = new HashMap<>();
+    for(Menu menu : order.keySet()) {
+      result.put(menu.getName(), order.get(menu));
+    }
+    return result;
+  }
+
   // 디저트 메뉴 개수 집계
   public int countDessertMenu() {
     int count = 0;
