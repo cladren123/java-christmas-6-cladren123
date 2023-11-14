@@ -42,7 +42,7 @@ public class EventService {
   // 증정 메뉴
   public String giveaway() {
     if(order.giveawayEvent() == Menu.CHAMPAGNE.getPrice()) {
-      return OutputMessage.GIVEAWAY_MENU.getMessage();
+      return OutputMessage.GIVEAWAY_MENU_TRUE.getMessage();
     }
     return OutputMessage.NOTHING.getMessage();
   }
