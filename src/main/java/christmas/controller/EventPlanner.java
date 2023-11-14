@@ -2,6 +2,8 @@ package christmas.controller;
 
 import christmas.constant.message.ErrorMessage;
 import christmas.constant.message.InputMessage;
+import christmas.model.Event;
+import christmas.model.EventService;
 import christmas.model.InputConverter;
 import christmas.model.Order;
 import christmas.view.InputView;
@@ -19,11 +21,14 @@ public class EventPlanner {
 
 
 
+  // 흐름 제어
   public void start() {
-    System.out.println(InputMessage.WELCOME.getMessage());
+    inputView.welcome();
     int date = readDate();
-    readOrder(date);
+    EventService eventService = new EventService(readDate(), readOrder());
   }
+
+
 
   // 날짜 입력
   public int readDate() {
@@ -39,12 +44,11 @@ public class EventPlanner {
   }
 
   // 메뉴 입력
-  public Order readOrder(int date) {
+  public Map<String, Integer> readOrder() {
     while (true) {
       String input = inputView.readMenu();
       try {
-        Map<String, Integer> order = inputConverter.convertOrder(input);
-        return new Order(date, order);
+        return inputConverter.convertOrder(input);
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_MENU.getMessage());
