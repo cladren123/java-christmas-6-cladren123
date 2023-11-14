@@ -2,9 +2,12 @@ package christmas.model;
 
 
 import christmas.constant.menu.Menu;
+import christmas.constant.message.BenefitMessage;
 import christmas.constant.message.OutputMessage;
 import org.mockito.internal.matchers.Or;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,6 +34,18 @@ public class EventService {
       return OutputMessage.GIVEAWAY_MENU.getMessage();
     }
     return OutputMessage.NOTHING.getMessage();
+  }
+
+  // 혜택 내용 : 0 제외
+  public Map<BenefitMessage, Integer> benefit() {
+    Map<BenefitMessage, Integer> result = new HashMap<>();
+    Map<BenefitMessage, Integer> benefit = event.getBenefit();
+    for (BenefitMessage benefitMessage : benefit.keySet()) {
+      if(benefit.get(benefitMessage) > 0) {
+        result.put(benefitMessage, benefit.get(benefitMessage));
+      }
+    }
+    return result;
   }
 
 
