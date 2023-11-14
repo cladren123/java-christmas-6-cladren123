@@ -18,6 +18,10 @@ public class Order {
   private final int date;
   private final Map<Menu, Integer> order;
 
+  public int getDate() {
+    return date;
+  }
+
   // 생성자
   public Order(int date, Map<String, Integer> inputOrder) {
     this.date = date;
