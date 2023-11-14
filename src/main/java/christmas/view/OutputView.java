@@ -12,8 +12,8 @@ import java.util.Map;
 public class OutputView {
 
   // 인트로 문구 출력
-  public void printIntro() {
-    System.out.println(OutputMessage.INTRO.getMessage());
+  public void printIntro(int date) {
+    System.out.println(String.format(OutputMessage.INTRO.getMessage(),date));
     System.out.println();
   }
 
