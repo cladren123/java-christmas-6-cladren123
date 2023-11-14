@@ -23,6 +23,8 @@ public class EventService {
     this.event = new Event(this.order);
   }
 
+
+
   // 할인 전 총 주문 금액
   public int orderMoney() {
     return order.calculateOrderMoney();
@@ -38,14 +40,7 @@ public class EventService {
 
   // 혜택 내용 : 0 제외
   public Map<BenefitMessage, Integer> benefit() {
-    Map<BenefitMessage, Integer> result = new HashMap<>();
-    Map<BenefitMessage, Integer> benefit = event.getBenefit();
-    for (BenefitMessage benefitMessage : benefit.keySet()) {
-      if(benefit.get(benefitMessage) > 0) {
-        result.put(benefitMessage, benefit.get(benefitMessage));
-      }
-    }
-    return result;
+    return event.benefit();
   }
 
   // 총 혜택 금액

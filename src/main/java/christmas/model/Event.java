@@ -31,6 +31,18 @@ public class Event {
     return benefit;
   }
 
+  // 유효한 혜택
+  // 혜택 내용 : 0 제외
+  public Map<BenefitMessage, Integer> benefit() {
+    Map<BenefitMessage, Integer> result = new HashMap<>();
+    for (BenefitMessage benefitMessage : benefit.keySet()) {
+      if(benefit.get(benefitMessage) > 0) {
+        result.put(benefitMessage, benefit.get(benefitMessage));
+      }
+    }
+    return result;
+  }
+
   // 총 할인 금액 계산
   public int discountMoney() {
     int discountMoney = 0;
