@@ -55,7 +55,7 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 
 - [X]  convertOrder() : String을 Menu로 변환 
 - [X]  countDessertMenu() : 디저트 메뉴 개수 집계 
-- [ ]  countMainMenu() : 메인 메뉴 개수 집계
+- [X]  countMainMenu() : 메인 메뉴 개수 집계
 - [ ]  calculateOrderMoney() : 총 주문 금액 계산
 
  
