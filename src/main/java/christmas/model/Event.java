@@ -1,5 +1,6 @@
 package christmas.model;
 
+import christmas.constant.menu.Menu;
 import christmas.constant.number.Number;
 import christmas.constant.number.SpecialDay;
 
@@ -32,6 +33,14 @@ public class Event {
       if (specialDay.getDay() == date) {
         return Number.SPECIAL_DISCOUNT.getNumber();
       }
+    }
+    return Number.NOTHING.getNumber();
+  }
+
+  // 증정 이벤트 계산
+  public int giveawayEvent(Order order) {
+    if (order.calculateOrderMoney() >= Number.GIVEAWAY_LIMIT_MONEY.getNumber()) {
+      return Menu.CHAMPAGNE.getPrice();
     }
     return Number.NOTHING.getNumber();
   }
