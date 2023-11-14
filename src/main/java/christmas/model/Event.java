@@ -43,18 +43,18 @@ public class Event {
     return result;
   }
 
-  // 총 할인 금액 계산
-  public int discountMoney() {
-    int discountMoney = 0;
+  // 총 혜택 금액 계산
+  public int BenefitMoney() {
+    int benefitMoney = 0;
     for(BenefitMessage benefitMessage : benefit.keySet()) {
-      discountMoney += benefit.get(benefitMessage);
+      benefitMoney += benefit.get(benefitMessage);
     }
-    return discountMoney;
+    return benefitMoney;
   }
 
   // 배지 부여
   public String badgeEvent() {
-    int discountMoney = discountMoney();
+    int discountMoney = BenefitMoney();
     if (discountMoney > EventBadge.SANTA.getPrice()) return EventBadge.SANTA.getName();
     if (discountMoney > EventBadge.TREE.getPrice()) return EventBadge.TREE.getName();
     if (discountMoney > EventBadge.STAR.getPrice()) return EventBadge.STAR.getName();

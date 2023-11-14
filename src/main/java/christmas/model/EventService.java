@@ -4,10 +4,7 @@ package christmas.model;
 import christmas.constant.menu.Menu;
 import christmas.constant.message.BenefitMessage;
 import christmas.constant.message.OutputMessage;
-import org.mockito.internal.matchers.Or;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -54,12 +51,12 @@ public class EventService {
 
   // 총 혜택 금액
   public int benefitMoney() {
-    return event.discountMoney();
+    return event.BenefitMoney();
   }
 
   // 할인 후 예상 결제 금액
   public int orderMoneyAfterBenefit() {
-    return order.calculateOrderMoney() - event.discountMoney();
+    return order.calculateOrderMoney() - event.BenefitMoney();
   }
 
   // 12월 이벤트 뱃지
