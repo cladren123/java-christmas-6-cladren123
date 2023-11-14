@@ -9,11 +9,11 @@ import christmas.constant.message.OutputMessage;
 public class OutputView {
 
   // 인트로 문구 출력
-  public void intro() {
+  public void printIntro() {
     System.out.println(OutputMessage.INTRO);
   }
 
-  
+
 
 
   
