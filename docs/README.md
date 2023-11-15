@@ -58,14 +58,14 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 ### Order
 
 날짜와 주문을 저장하며 각 종 작업을 수행합니다. 
-
-- [X]  convertOrder() : String을 Menu로 변환 
+ 
 - [X]  orderMenu() : 메뉴 목록 반환
 - [X]  countDessertMenu() : 디저트 메뉴 개수 집계 
 - [X]  countMainMenu() : 메인 메뉴 개수 집계
 - [X]  calculateOrderMoney() : 총 주문 금액 계산
 - [X]  christmasDdayDiscount() : 크리스마스 디데일 할인 금액 계산
 - [X]  dayDiscount() : 날짜 할인 금액 계산
+- [X]  checkWeekdayOrWeekend() : 주말, 평일 확인
 - [X]  weekdayDiscount() : 평일 할인 금액 계산
 - [X]  weekendDiscount() : 주말 할인 금액 계산
 - [X]  specialDiscount() : 특별 할인 금액 계산
