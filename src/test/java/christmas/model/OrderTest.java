@@ -43,6 +43,18 @@ class OrderTest {
     );
   }
 
+  @DisplayName("메뉴 목록 반환")
+  @Test
+  void orderMenu() {
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(Menu.MUSHROOM_SOUP, 5, Menu.CHAMPAGNE, 1));
+    Order order = new Order(3, inputOrder);
+    Map<String, Integer> result = order.orderMenu();
+    Map<String, Integer> expected = new LinkedHashMap<>(Map.of(Menu.MUSHROOM_SOUP.getName(), 5, Menu.CHAMPAGNE.getName(), 1));
+    assertEquals(result, expected);
+  }
+
+
 
 
 
