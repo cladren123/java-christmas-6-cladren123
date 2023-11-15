@@ -49,6 +49,8 @@ Controller 역할 수행, model과 view를 이어주는 역할을 하며 전체 
 
 ### Converter
 
+값을 클래스에 저장할 값으로 변환합니다.
+
 - [X]  convertOrder() : 입력값을 메뉴로 변환
 - [X]  benefitTotal() : 주문을 토대로 혜택 집계
 
