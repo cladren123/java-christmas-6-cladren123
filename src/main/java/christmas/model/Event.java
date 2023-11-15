@@ -14,19 +14,11 @@ public class Event {
 
   private final Map<BenefitMessage, Integer> benefit;
 
-  public Event(Order order) {
-    this.benefit = benefitTotal(order);
+  public Event(Map<BenefitMessage, Integer> benefit) {
+    this.benefit = benefit;
   }
 
-  // 혜택 집계
-  public Map<BenefitMessage, Integer> benefitTotal(Order order) {
-    Map<BenefitMessage, Integer> benefit = new LinkedHashMap<>();
-    benefit.put(BenefitMessage.CHRISTMAS_D_DAY,order.christmasDdayDiscount());
-    benefit.putAll(order.dayDiscount());
-    benefit.put(BenefitMessage.SPECIAL_DISCOUNT, order.specialDiscount());
-    benefit.put(BenefitMessage.GIVEAWAY_EVENT, order.giveawayEvent());
-    return benefit;
-  }
+
 
   // 유효한 혜택
   // 혜택 내용 : 0 제외

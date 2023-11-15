@@ -17,7 +17,7 @@ public class EventService {
 
   public EventService(int date, Map<String, Integer> inputOrder) {
     this.order = new Order(date, Converter.convertOrder(inputOrder));
-    this.event = new Event(this.order);
+    this.event = new Event(Converter.benefitTotal(order));
   }
 
   // 날짜
