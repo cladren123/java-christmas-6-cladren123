@@ -159,6 +159,44 @@ class OrderTest {
     assertEquals(result, expected);
   }
 
+  @DisplayName("총 주문 금액 계산 - 한 개")
+  @Test
+  void calculateOrderMoney_One() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 1
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.calculateOrderMoney();
+
+    // then
+    int expected = Menu.T_BONE_STEAK.getPrice();
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("총 주문 금액 계산 - 여러 개")
+  @Test
+  void calculateOrderMoney_Many() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 1,
+            Menu.CHOCOLATE_CAKE, 3,
+            Menu.ZERO_COLA, 3
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.calculateOrderMoney();
+
+    // then
+    int expected = Menu.T_BONE_STEAK.getPrice() + Menu.CHOCOLATE_CAKE.getPrice() * 3 + Menu.ZERO_COLA.getPrice() * 3;
+    assertEquals(result, expected);
+  }
+
 
 
 
