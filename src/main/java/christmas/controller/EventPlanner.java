@@ -1,11 +1,9 @@
 package christmas.controller;
 
+import christmas.constant.menu.Menu;
 import christmas.constant.message.ErrorMessage;
 import christmas.constant.message.InputMessage;
-import christmas.model.Event;
-import christmas.model.EventService;
-import christmas.model.InputConverter;
-import christmas.model.Order;
+import christmas.model.*;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 import org.mockito.internal.matchers.Or;
@@ -25,7 +23,10 @@ public class EventPlanner {
   // 흐름 제어
   public void start() {
     inputView.welcome();
-    EventService eventService = new EventService(readDate(), readOrder());
+    int date = readDate();
+    Order order = readOrder(date);
+    Event event = new Event(Converter.benefitTotal(order);
+    EventService eventService = new EventService(order, event);
     print(eventService);
   }
 
@@ -57,11 +58,13 @@ public class EventPlanner {
   }
 
   // 메뉴 입력
-  public Map<String, Integer> readOrder() {
+  public Order readOrder(int date) {
     while (true) {
       String input = inputView.readMenu();
       try {
-        return InputConverter.convertOrder(input);
+        Map<String, Integer> inputOrder = InputConverter.convertOrder(input);
+        Map<Menu, Integer> inputMenu = Converter.convertOrder(inputOrder);
+        Order order = new Order(date, inputMenu);
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_MENU.getMessage());
