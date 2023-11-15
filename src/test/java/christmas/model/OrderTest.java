@@ -43,13 +43,34 @@ class OrderTest {
     );
   }
 
-  @DisplayName("메뉴 목록 반환")
+  @DisplayName("메뉴 목록 반환 - 한 개")
   @Test
-  void orderMenu() {
+  void orderMenuOne() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(Menu.MUSHROOM_SOUP,1 ));
+    Order order = new Order(3, inputOrder);
+
+    // when
+    Map<String, Integer> result = order.orderMenu();
+
+    // then
+    Map<String, Integer> expected = new LinkedHashMap<>(Map.of(Menu.MUSHROOM_SOUP.getName(),1));
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("메뉴 목록 반환 - 여러 개")
+  @Test
+  void orderMenuMany() {
+    // given
     int date = 3;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(Menu.MUSHROOM_SOUP, 5, Menu.CHAMPAGNE, 1));
     Order order = new Order(3, inputOrder);
+
+    // when
     Map<String, Integer> result = order.orderMenu();
+
+    // then
     Map<String, Integer> expected = new LinkedHashMap<>(Map.of(Menu.MUSHROOM_SOUP.getName(), 5, Menu.CHAMPAGNE.getName(), 1));
     assertEquals(result, expected);
   }
