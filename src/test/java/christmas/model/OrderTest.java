@@ -1,6 +1,7 @@
 package christmas.model;
 
 import christmas.constant.menu.Menu;
+import christmas.constant.message.BenefitMessage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -232,6 +233,83 @@ class OrderTest {
     int expected = 0;
     assertEquals(result, expected);
   }
+
+  @DisplayName("날짜 할인 - 평일")
+  @Test
+  public void datDiscount_weekday() {
+    // given
+    int date = 4;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 1,
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    Map<BenefitMessage, Integer> result = order.dayDiscount();
+
+    // then
+    Map<BenefitMessage, Integer> expected = new LinkedHashMap<>(Map.of(BenefitMessage.WEEKDAY_DISCOUNT, 5 * 2023));
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("날짜 할인 - 평일, 없을 때")
+  @Test
+  public void datDiscount_weekday_nothing() {
+    // given
+    int date = 4;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 1
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    Map<BenefitMessage, Integer> result = order.dayDiscount();
+
+    // then
+    Map<BenefitMessage, Integer> expected = new LinkedHashMap<>(Map.of(BenefitMessage.WEEKDAY_DISCOUNT, 0));
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("날짜 할인 - 주말")
+  @Test
+  public void datDiscount_weekend() {
+    // given
+    int date = 1;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 1,
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    Map<BenefitMessage, Integer> result = order.dayDiscount();
+
+    // then
+    Map<BenefitMessage, Integer> expected = new LinkedHashMap<>(Map.of(BenefitMessage.WEEKEND_DISCOUNT, 1 * 2023));
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("날짜 할인 - 주말, 없을 때")
+  @Test
+  public void datDiscount_weekend_nothing() {
+    // given
+    int date = 1;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    Map<BenefitMessage, Integer> result = order.dayDiscount();
+
+    // then
+    Map<BenefitMessage, Integer> expected = new LinkedHashMap<>(Map.of(BenefitMessage.WEEKEND_DISCOUNT, 0));
+    assertEquals(result, expected);
+  }
+
+
+
 
 
 
