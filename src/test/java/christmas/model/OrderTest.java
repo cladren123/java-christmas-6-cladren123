@@ -236,7 +236,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 평일")
   @Test
-  public void datDiscount_weekday() {
+  public void dayDiscount_weekday() {
     // given
     int date = 4;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -255,7 +255,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 평일, 없을 때")
   @Test
-  public void datDiscount_weekday_nothing() {
+  public void dayDiscount_weekday_nothing() {
     // given
     int date = 4;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -273,7 +273,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 주말")
   @Test
-  public void datDiscount_weekend() {
+  public void dayDiscount_weekend() {
     // given
     int date = 1;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -292,7 +292,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 주말, 없을 때")
   @Test
-  public void datDiscount_weekend_nothing() {
+  public void dayDiscount_weekend_nothing() {
     // given
     int date = 1;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
