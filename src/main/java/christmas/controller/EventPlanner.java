@@ -16,7 +16,6 @@ import java.util.Map;
 public class EventPlanner {
 
   private final InputView inputView = new InputView();
-  private final OutputView outputView = new OutputView();
 
   // 흐름 제어
   public void start() {
@@ -30,14 +29,14 @@ public class EventPlanner {
 
   // 결과 출력
   public void print(EventService eventService) {
-    outputView.printIntro(eventService.getDate());
-    outputView.printMenu(eventService.orderMenu());
-    outputView.printOrderMoney(eventService.orderMoney());
-    outputView.printGiveaway(eventService.giveaway());
-    outputView.printBenefit(eventService.benefit());
-    outputView.printBenefitMoney(eventService.benefitMoney());
-    outputView.printOrderMoneyAfterDiscount(eventService.orderMoneyAfterBenefit());
-    outputView.printEventBadge(eventService.badgeEvent());
+    OutputView.printIntro(eventService.getDate());
+    OutputView.printMenu(eventService.orderMenu());
+    OutputView.printOrderMoney(eventService.orderMoney());
+    OutputView.printGiveaway(eventService.giveaway());
+    OutputView.printBenefit(eventService.benefit());
+    OutputView.printBenefitMoney(eventService.benefitMoney());
+    OutputView.printOrderMoneyAfterDiscount(eventService.orderMoneyAfterBenefit());
+    OutputView.printEventBadge(eventService.badgeEvent());
   }
 
 
