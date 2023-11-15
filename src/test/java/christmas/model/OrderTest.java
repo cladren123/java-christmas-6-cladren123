@@ -386,7 +386,7 @@ class OrderTest {
 
   @DisplayName("평일 할인 금액 계산 - 없음")
   @Test
-  void weekdayDiscount_Nothing() {
+  void weekdayDiscount_nothing() {
     // given
     int date = 3;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -396,6 +396,63 @@ class OrderTest {
 
     // when
     int result = order.weekdayDiscount();
+
+    // then
+    int expect = 0 * 2023;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("주말 할인 금액 계산 - 하나")
+  @Test
+  void weekendDiscount_one() {
+    // given
+    int date = 1;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.BBQ_RIBS, 4
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.weekendDiscount();
+
+    // then
+    int expect = 4 * 2023;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("주말 할인 금액 계산 - 여러개")
+  @Test
+  void weekendDiscount_many() {
+    // given
+    int date = 1;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.BBQ_RIBS, 4,
+            Menu.SEAFOOD_PASTA, 3,
+            Menu.CHAMPAGNE, 1
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.weekendDiscount();
+
+    // then
+    int expect = 7 * 2023;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("주말 할인 금액 계산 - 없음")
+  @Test
+  void weekendDiscount_nothing() {
+    // given
+    int date = 1;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHAMPAGNE, 1,
+            Menu.ICE_CREAM, 2
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.weekendDiscount();
 
     // then
     int expect = 0 * 2023;
