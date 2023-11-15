@@ -197,6 +197,42 @@ class OrderTest {
     assertEquals(result, expected);
   }
 
+  @DisplayName("크리스마스 디데이 계산 - 25일 이내")
+  @Test
+  void christmasDdayDiscount_validNumber() {
+    // given
+    int date = 25;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 1
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.christmasDdayDiscount();
+
+    // then
+    int expected = 3400;
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("크리스마스 디데이 계산 - 25일 밖")
+  @Test
+  void christmasDdayDiscount_invalidNumber() {
+    // given
+    int date = 26;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 1
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.christmasDdayDiscount();
+
+    // then
+    int expected = 0;
+    assertEquals(result, expected);
+  }
+
 
 
 
