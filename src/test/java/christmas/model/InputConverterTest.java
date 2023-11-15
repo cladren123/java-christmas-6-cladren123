@@ -24,11 +24,9 @@ class InputConverterTest {
   }
 
   @DisplayName("날짜 입력을 숫자로 반환 - 유효하지 입력")
-  @Test
-  void convertDate_invalidInput() {
-    // given
-    String input = "11s";
-
+  @ValueSource(strings = {"11s", "", "123"})
+  @ParameterizedTest
+  void convertDate_invalidInput(String input) {
     // when, then
     assertThrows(IllegalArgumentException.class, () -> InputConverter.convertDate(input));
   }
