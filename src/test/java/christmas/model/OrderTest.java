@@ -1,5 +1,6 @@
 package christmas.model;
 
+import christmas.constant.menu.Menu;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,26 +22,29 @@ class OrderTest {
   @Test
   void order_validInput() {
     int date = 3;
-    Map<String, Integer> inputOrder = new LinkedHashMap<>();
-    inputOrder.put("양송이수프", 1);
-    inputOrder.put("아이스크림", 1);
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>();
+    inputOrder.put(Menu.MUSHROOM_SOUP, 1);
+    inputOrder.put(Menu.ZERO_COLA, 1);
     assertDoesNotThrow(() -> new Order(3, inputOrder));
   }
 
   @DisplayName("Order 생성자 검증 - 예외 입력")
   @MethodSource("provideOrderData")
   @ParameterizedTest
-  void order_invalidInput(int date, Map<String, Integer> inputOrder) {
+  void order_invalidInput(int date, Map<Menu, Integer> inputOrder) {
     assertThrows(IllegalArgumentException.class, () -> new Order(date, inputOrder));
   }
 
   // order의 예외 입력 모음
   static Stream<Arguments> provideOrderData() {
     return Stream.of(
-            arguments(3, new LinkedHashMap<>(Map.of("양송이수프",25, "아이스크림",6))),
-            arguments(3, new LinkedHashMap<>(Map.of("제로콜라",1, "레드와인",1)))
+            arguments(3, new LinkedHashMap<>(Map.of(Menu.MUSHROOM_SOUP, 25, Menu.ICE_CREAM, 6))),
+            arguments(3, new LinkedHashMap<>(Map.of(Menu.ZERO_COLA,1, Menu.RED_WINE,1)))
     );
   }
+
+
+
 
 
 
