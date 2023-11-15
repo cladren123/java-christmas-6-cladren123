@@ -18,14 +18,12 @@ public class EventPlanner {
   private final InputView inputView = new InputView();
   private final OutputView outputView = new OutputView();
 
-
-
   // 흐름 제어
   public void start() {
     inputView.welcome();
     int date = readDate();
     Order order = readOrder(date);
-    Event event = new Event(Converter.benefitTotal(order);
+    Event event = new Event(Converter.benefitTotal(order));
     EventService eventService = new EventService(order, event);
     print(eventService);
   }
@@ -65,6 +63,7 @@ public class EventPlanner {
         Map<String, Integer> inputOrder = InputConverter.convertOrder(input);
         Map<Menu, Integer> inputMenu = Converter.convertOrder(inputOrder);
         Order order = new Order(date, inputMenu);
+        return order;
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_MENU.getMessage());
