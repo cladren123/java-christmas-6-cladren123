@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 데이터 변환기
+ * 데이터 변환기 - Order, Event를 생성하기 위해 데이터를 변환 작업 수행
  */
 public class Converter {
 

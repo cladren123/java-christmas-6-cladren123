@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * 검증 작업을 수행하는 클래스
+ * 검증 작업을 수행
  */
 public class Validate {
 

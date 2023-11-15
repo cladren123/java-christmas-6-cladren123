@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 주문을 저장하는 class
+ * 주문과 비즈니스 로직을 처리
  */
 public class Order {
 

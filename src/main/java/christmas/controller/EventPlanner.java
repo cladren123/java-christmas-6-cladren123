@@ -11,7 +11,8 @@ import org.mockito.internal.matchers.Or;
 import java.util.Map;
 
 /**
- * 전체적인 흐름을 설정합니다.
+ * 전체적인 흐름을 설정
+ * Model과 View를 연결
  */
 public class EventPlanner {
 

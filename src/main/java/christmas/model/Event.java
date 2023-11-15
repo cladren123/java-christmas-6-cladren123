@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- *
+ * 이벤트, 혜택 관련 로직 수행
  */
 public class Event {
 

@@ -8,7 +8,7 @@ import christmas.constant.message.OutputMessage;
 import java.util.Map;
 
 /**
- * 로직 처리
+ * 출력을 위한 데이터 메소드 구현
  */
 public class EventService {
 
