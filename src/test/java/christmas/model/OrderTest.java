@@ -324,7 +324,8 @@ class OrderTest {
     boolean result = order.checkWeekdayOrWeekend();
 
     // then
-    assertEquals(true, result);
+    boolean expect = true;
+    assertEquals(result, expect);
   }
 
   @DisplayName("입력 날짜가 평일, 주말 확인 - 주말")
@@ -342,7 +343,63 @@ class OrderTest {
     boolean result = order.checkWeekdayOrWeekend();
 
     // then
-    assertEquals(false, result);
+    boolean expect = false;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("평일 할인 금액 계산 - 하나")
+  @Test
+  void weekdayDiscount_one() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.weekdayDiscount();
+
+    // then
+    int expect = 5 * 2023;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("평일 할인 금액 계산 - 여러 개")
+  @Test
+  void weekdayDiscount_many() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 5,
+            Menu.ICE_CREAM, 4
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.weekdayDiscount();
+
+    // then
+    int expect = 9 * 2023;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("평일 할인 금액 계산 - 없음")
+  @Test
+  void weekdayDiscount_Nothing() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.BBQ_RIBS, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.weekdayDiscount();
+
+    // then
+    int expect = 0 * 2023;
+    assertEquals(result, expect);
   }
 
 
