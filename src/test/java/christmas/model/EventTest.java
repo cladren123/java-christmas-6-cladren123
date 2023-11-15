@@ -33,6 +33,25 @@ class EventTest {
     assertEquals(result, expect);
   }
 
+  @DisplayName("총혜택 금액 계산")
+  @Test
+  void benefitMoney() {
+    // given
+    Map<BenefitMessage, Integer> benefit = new LinkedHashMap<>(Map.of(
+            BenefitMessage.CHRISTMAS_D_DAY, 1300,
+            BenefitMessage.WEEKDAY_DISCOUNT, 2023,
+            BenefitMessage.GIVEAWAY_EVENT, 0
+    ));
+    Event event = new Event(benefit);
+
+    // when
+    int result = event.benefitMoney();
+
+    // then
+    int expect = 1300 + 2023;
+    assertEquals(result, expect);
+  }
+
 
 
 }
