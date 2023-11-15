@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -236,7 +237,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 평일")
   @Test
-  public void dayDiscount_weekday() {
+  void dayDiscount_weekday() {
     // given
     int date = 4;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -255,7 +256,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 평일, 없을 때")
   @Test
-  public void dayDiscount_weekday_nothing() {
+  void dayDiscount_weekday_nothing() {
     // given
     int date = 4;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -273,7 +274,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 주말")
   @Test
-  public void dayDiscount_weekend() {
+  void dayDiscount_weekend() {
     // given
     int date = 1;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -292,7 +293,7 @@ class OrderTest {
 
   @DisplayName("날짜 할인 - 주말, 없을 때")
   @Test
-  public void dayDiscount_weekend_nothing() {
+  void dayDiscount_weekend_nothing() {
     // given
     int date = 1;
     Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
@@ -307,6 +308,44 @@ class OrderTest {
     Map<BenefitMessage, Integer> expected = new LinkedHashMap<>(Map.of(BenefitMessage.WEEKEND_DISCOUNT, 0));
     assertEquals(result, expected);
   }
+
+  @DisplayName("입력 날짜가 평일, 주말 확인 - 평일")
+  @ValueSource(ints = {3,4,5,6,7,10,11,12,13,14,17,18,19,20,21,24,25,26,27,28,31})
+  @ParameterizedTest
+  void checkWeekdayOrWeekend_weekday(int input) {
+    // given
+    int date = input;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    boolean result = order.checkWeekdayOrWeekend();
+
+    // then
+    assertEquals(true, result);
+  }
+
+  @DisplayName("입력 날짜가 평일, 주말 확인 - 주말")
+  @ValueSource(ints = {1,2,8,9,15,16,22,23,29,30})
+  @ParameterizedTest
+  void checkWeekdayOrWeekend_weekend(int input) {
+    // given
+    int date = input;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    boolean result = order.checkWeekdayOrWeekend();
+
+    // then
+    assertEquals(false, result);
+  }
+
+
 
 
 
