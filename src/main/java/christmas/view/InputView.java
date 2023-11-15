@@ -10,19 +10,19 @@ import christmas.constant.message.InputMessage;
 public class InputView {
 
   // 환영 인사
-  public void welcome() {
+  public static void welcome() {
     System.out.println(InputMessage.WELCOME.getMessage());
   }
 
   // 날짜 입력
-  public String readDate() {
+  public static String readDate() {
     System.out.println(InputMessage.READ_DATE.getMessage());
     String inputDate = Console.readLine();
     return inputDate;
   }
 
   // 메뉴 입력
-  public String readMenu() {
+  public static String readMenu() {
     System.out.println(InputMessage.READ_MENU.getMessage());
     String inputMenu = Console.readLine();
     return inputMenu;
