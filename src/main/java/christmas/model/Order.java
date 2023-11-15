@@ -20,23 +20,13 @@ public class Order {
   private final Map<Menu, Integer> order;
 
   // 생성자
-  public Order(int date, Map<String, Integer> inputOrder) {
+  public Order(int date, Map<Menu, Integer> order) {
     this.date = date;
-    Map<Menu, Integer> order = convertOrder(inputOrder);
     Validate.validateMenuOnlyBeverage(order);
     Validate.validateMenuMaximum(order);
     this.order = order;
   }
 
-  // String에서 Menu 변환
-  public Map<Menu, Integer> convertOrder(Map<String, Integer> inputOrder) {
-    Map<Menu, Integer> order = new LinkedHashMap<>();
-    for(String name : inputOrder.keySet()) {
-      Menu menu = Validate.validateMenu(name);
-      order.put(menu, inputOrder.get(name));
-    }
-    return order;
-  }
 
   // 날짜 반환
   public int getDate() {
