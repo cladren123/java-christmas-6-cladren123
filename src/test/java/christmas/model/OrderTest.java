@@ -498,6 +498,45 @@ class OrderTest {
   }
 
 
+  @DisplayName("증정 이벤트 - 포함")
+  @Test
+  void giveawayEvent_trueInput() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.BBQ_RIBS, 2,
+            Menu.T_BONE_STEAK, 3,
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.giveawayEvent();
+
+    // then
+    int expect = 25000;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("증정 이벤트 - 미포함")
+  @Test
+  void giveawayEvent_falseInput() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 1
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.giveawayEvent();
+
+    // then
+    int expect = 0;
+    assertEquals(result, expect);
+  }
+
+
 
 
 
