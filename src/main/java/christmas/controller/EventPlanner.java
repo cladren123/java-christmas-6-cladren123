@@ -18,7 +18,6 @@ import java.util.Map;
 public class EventPlanner {
 
   private final InputView inputView = new InputView();
-  private final InputConverter inputConverter = new InputConverter();
   private final OutputView outputView = new OutputView();
 
 
@@ -49,7 +48,7 @@ public class EventPlanner {
     while(true) {
       String input = inputView.readDate();
       try {
-        return inputConverter.convertDate(input);
+        return InputConverter.convertDate(input);
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_DATE.getMessage());
@@ -62,7 +61,7 @@ public class EventPlanner {
     while (true) {
       String input = inputView.readMenu();
       try {
-        return inputConverter.convertOrder(input);
+        return InputConverter.convertOrder(input);
       }
       catch (IllegalArgumentException e) {
         System.out.println(ErrorMessage.INVALID_MENU.getMessage());

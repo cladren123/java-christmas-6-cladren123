@@ -13,7 +13,7 @@ import java.util.Map;
 public class InputConverter {
 
   // 날짜 입력값을 숫자로 변환
-  public int convertDate(String input) {
+  public static int convertDate(String input) {
     Validate.validateNumber(input);
     int date = Integer.parseInt(input);
     Validate.validateDateNumberRange(date);
@@ -21,7 +21,7 @@ public class InputConverter {
   }
 
   // 메뉴 입력값을 Map<이름, 갯수> 로 변환
-  public Map<String, Integer> convertOrder(String input) {
+  public static Map<String, Integer> convertOrder(String input) {
     Map<String, Integer> order = new LinkedHashMap<>();
     String[] inputSplitRest = input.split(",");
     for (String data : inputSplitRest) {
@@ -36,13 +36,13 @@ public class InputConverter {
   }
 
   // 메뉴 검증 후 반환
-  public String convertMenu(String inputMenu) {
+  public static String convertMenu(String inputMenu) {
     Validate.validateMenu(inputMenu);
     return inputMenu;
   }
 
   // 메뉴 개수 검증 후 반환
-  public int convertNumber(String inputNumber) {
+  public static int convertNumber(String inputNumber) {
     Validate.validateNumber(inputNumber);
     int number = Integer.parseInt(inputNumber);
     Validate.validateMenuNumberRange(number);
