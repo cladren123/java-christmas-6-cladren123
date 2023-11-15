@@ -459,6 +459,44 @@ class OrderTest {
     assertEquals(result, expect);
   }
 
+  @DisplayName("특별 할인 - 포함")
+  @ValueSource(ints = {3,10,17,24,25,31})
+  @ParameterizedTest
+  void specialDiscount_trueInput(int input) {
+    // given
+    int date = input;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.specialDiscount();
+
+    // then
+    int expect = 1000;
+    assertEquals(result, expect);
+  }
+
+  @DisplayName("특별 할인 - 미포함")
+  @ValueSource(ints = {1,2,4,5,6,7,8,9,11,12,13,14,15,16,18,19,20,21,22,23,26,27,28,29,30})
+  @ParameterizedTest
+  void specialDiscount_falseInput(int input) {
+    // given
+    int date = input;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.CHOCOLATE_CAKE, 5
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.specialDiscount();
+
+    // then
+    int expect = 0;
+    assertEquals(result, expect);
+  }
+
 
 
 
