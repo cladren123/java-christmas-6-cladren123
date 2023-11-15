@@ -13,7 +13,7 @@ import java.util.Map;
 public class Converter {
 
   // String에서 Menu 변환
-  public Map<Menu, Integer> convertOrder(Map<String, Integer> inputOrder) {
+  public static Map<Menu, Integer> convertOrder(Map<String, Integer> inputOrder) {
     Map<Menu, Integer> order = new LinkedHashMap<>();
     for(String name : inputOrder.keySet()) {
       Menu menu = Validate.validateMenu(name);
