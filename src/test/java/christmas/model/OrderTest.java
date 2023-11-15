@@ -75,6 +75,47 @@ class OrderTest {
     assertEquals(result, expected);
   }
 
+  @DisplayName("디저트 메뉴 - 한 개")
+  @Test
+  void countDessertMenu_One() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.MUSHROOM_SOUP, 5,
+            Menu.CHAMPAGNE, 1,
+            Menu.CHOCOLATE_CAKE, 2
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.countDessertMenu();
+
+    // then
+    int expected = 2;
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("디저트 메뉴 - 여러 개")
+  @Test
+  void countDessertMenu_Many() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.MUSHROOM_SOUP, 5,
+            Menu.CHAMPAGNE, 1,
+            Menu.CHOCOLATE_CAKE, 2,
+            Menu.ICE_CREAM, 3
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.countDessertMenu();
+
+    // then
+    int expected = 5;
+    assertEquals(result, expected);
+  }
+
 
 
 
