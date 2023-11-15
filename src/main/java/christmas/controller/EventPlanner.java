@@ -15,11 +15,9 @@ import java.util.Map;
  */
 public class EventPlanner {
 
-  private final InputView inputView = new InputView();
-
   // 흐름 제어
   public void start() {
-    inputView.welcome();
+    InputView.welcome();
     int date = readDate();
     Order order = readOrder(date);
     Event event = new Event(Converter.benefitTotal(order));
@@ -44,7 +42,7 @@ public class EventPlanner {
   // 날짜 입력
   public int readDate() {
     while(true) {
-      String input = inputView.readDate();
+      String input = InputView.readDate();
       try {
         return InputConverter.convertDate(input);
       }
@@ -57,7 +55,7 @@ public class EventPlanner {
   // 메뉴 입력
   public Order readOrder(int date) {
     while (true) {
-      String input = inputView.readMenu();
+      String input = InputView.readMenu();
       try {
         Map<String, Integer> inputOrder = InputConverter.convertOrder(input);
         Map<Menu, Integer> inputMenu = Converter.convertOrder(inputOrder);
