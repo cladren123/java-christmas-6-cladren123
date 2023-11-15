@@ -75,7 +75,7 @@ class OrderTest {
     assertEquals(result, expected);
   }
 
-  @DisplayName("디저트 메뉴 - 한 개")
+  @DisplayName("디저트 메뉴 집계 - 한 개")
   @Test
   void countDessertMenu_One() {
     // given
@@ -95,7 +95,7 @@ class OrderTest {
     assertEquals(result, expected);
   }
 
-  @DisplayName("디저트 메뉴 - 여러 개")
+  @DisplayName("디저트 메뉴 집계 - 여러 개")
   @Test
   void countDessertMenu_Many() {
     // given
@@ -113,6 +113,49 @@ class OrderTest {
 
     // then
     int expected = 5;
+    assertEquals(result, expected);
+  }
+
+
+  @DisplayName("메인 메뉴 집계 - 한 개")
+  @Test
+  void countMainMenu_One() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 5,
+            Menu.CHAMPAGNE, 1,
+            Menu.CHOCOLATE_CAKE, 2
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.countMainMenu();
+
+    // then
+    int expected = 5;
+    assertEquals(result, expected);
+  }
+
+  @DisplayName("메인 메뉴 집계 - 여러 개")
+  @Test
+  void countMainMenu_Many() {
+    // given
+    int date = 3;
+    Map<Menu, Integer> inputOrder = new LinkedHashMap<>(Map.of(
+            Menu.T_BONE_STEAK, 5,
+            Menu.BBQ_RIBS, 3,
+            Menu.SEAFOOD_PASTA, 2,
+            Menu.CHAMPAGNE, 1,
+            Menu.CHOCOLATE_CAKE, 2
+    ));
+    Order order = new Order(date, inputOrder);
+
+    // when
+    int result = order.countMainMenu();
+
+    // then
+    int expected = 10;
     assertEquals(result, expected);
   }
 
